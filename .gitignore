@@ -1,2 +1,4 @@
 #ignore new_tryon_docenv,
+client-desktop.rst
+new_tryon_docenv/
 docs/build/
