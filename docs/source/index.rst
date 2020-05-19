@@ -6,7 +6,7 @@ Welcome to Tryton Documentation. Here you’ll get the resources you need to set
 
 Tryton is a three-tier high-level general purpose computer application platform on top of which is built an Enterprise resource planning (ERP) business solution through a set of Tryton modules. The three-tier architecture consists of the Tryton client, the Tryton server, and the Database management system (mainly PostgreSQL_).
 
-.. _PostgreSQL: https://www.postgresql.org/ 
+.. _PostgreSQL:  https://www.postgresql.org/ 
 
 It is business software, ideal for companies of any size, easy to use, complete and 100% Open Source. In this documentation, we’ll be walking you through on the best way to set up Tryton to start your business. For more information join our Discussion-group_
 

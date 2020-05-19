@@ -15,7 +15,6 @@ import os
 # sys.path.insert(0, os.path.abspath('.'))
 # import sphinx_rtd_theme
 import sys
-import sphinx_copybutton
 
 sys.setrecursionlimit(1000)
 
@@ -35,9 +34,7 @@ release = '0.1'
 # Add any Sphinx extension module names here, as strings. They can be
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
-extensions = [
-    'sphinx_copybutton',
-]
+extensions = ['sphinx_copybutton']
 
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates']
@@ -81,12 +78,12 @@ else:
         ],                                                                       
     }
 
-# from sphinx.writers.html import HTMLTranslator
-# class PatchedHTMLTranslator(HTMLTranslator):
-#     def visit_reference(self, node):
-#         if node.get('newtab') or not (node.get('target') or node.get('internal') or 'refuri' not in node):
-#             node['target'] = '_blank'
-#         super().visit_reference(node)
+from sphinx.writers.html import HTMLTranslator
+class PatchedHTMLTranslator(HTMLTranslator):
+    def visit_reference(self, node):
+        if node.get('newtab') or not (node.get('target') or node.get('internal') or 'refuri' not in node):
+            node['target'] = '_blank'
+        super().visit_reference(node)
 
-# def setup(app):
-#     app.set_translator('html', PatchedHTMLTranslator)
+def setup(app):
+    app.set_translator('html', PatchedHTMLTranslator)
