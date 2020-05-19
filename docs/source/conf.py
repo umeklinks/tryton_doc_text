@@ -15,6 +15,7 @@ import os
 # sys.path.insert(0, os.path.abspath('.'))
 # import sphinx_rtd_theme
 import sys
+import sphinx_copybutton
 
 sys.setrecursionlimit(1000)
 
