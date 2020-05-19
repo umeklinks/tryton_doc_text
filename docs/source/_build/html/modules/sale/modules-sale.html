@@ -1,0 +1,381 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Sale Module &mdash; Tryton Test 0.1 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Sale Advance Payment Module" href="modules-sale-advance-payment.html" />
+    <link rel="prev" title="Sale" href="index-sale.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> Tryton Test
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../client-desktop/index-client-desktop.html">Tryton Desktop Client</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../web-client/index-web-client.html">Tryton Web Client</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../server/index-server.html">Tryton Server</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../client-library/index-client-library.html">Tryton Scripting Client</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../index-modules.html">App Modules</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../account/account.html">Accounting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../analytic-accounting/index-analytic-accounting.html">Analytic Accounting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../commission/index-commission.html">Commission</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../edocument/index-edocument.html">Electronic Document</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../marketing/index-marketing.html">Marketing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../production/index-production.html">Production</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../project/index-project.html">Project</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../purchase/index-purchase.html">Purchase</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="index-sale.html">Sale</a><ul class="current">
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Sale Module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#sale">Sale</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="modules-sale-advance-payment.html">Sale Advance Payment Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="modules-sale-amendment.html">Sale Amendment Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="modules-sale-complaint.html">Sale Complaint Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="modules-sale-credit-limit.html">Sale Credit Limit</a></li>
+<li class="toctree-l3"><a class="reference internal" href="modules-sale-extra.html">Sale Extra</a></li>
+<li class="toctree-l3"><a class="reference internal" href="modules-sale-history.html">Sale History Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="modules-sale-invoice-grouping.html">Sale Invoice Grouping Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="modules-sale-opportunity.html">Sale Opportunity Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="modules-sale-payment.html">Sale Payment Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="modules-sale-price-list.html">Sale Price List Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="modules-sale-product-customer.html">Sale Product Customer Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="modules-sale-promotion.html">Sale Promotion</a></li>
+<li class="toctree-l3"><a class="reference internal" href="modules-sale-promotion-coupon.html">Sale Promotion Coupon Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="modules-sale-shipment-cost.html">Sale Shipment Cost Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="modules-sale-shipment-grouping.html">Sale Shipment Grouping Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="modules-sale-shipment-tolerance.html">Sale Shipment Tolerance Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="modules-sale-secondary-unit.html">Sale Secondary Unit Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="modules-sale-stock-quantity.html">Sale Stock Quantity</a></li>
+<li class="toctree-l3"><a class="reference internal" href="modules-sale-supply.html">Sale Supply Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="modules-sale-supply-drop-shipment.html">Sale Supply Drop Shipment Model</a></li>
+<li class="toctree-l3"><a class="reference internal" href="modules-sale-supply-production.html">Sale Supply Production Module</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../sale_subscription/index-sale_subscription.html">Sale Subscription</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../stock/index-stock.html">Stock</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../timesheet/index-timesheet.html">Timesheet</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../bank/modules-bank.html">Bank Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../company/index-company.html">Company</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../carrier/index-carrier.html">Carrier</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../country/modules-country.html">Country Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../currency/modules-currency.html">Currency Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../customs/modules-customs.html">Customs Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../dashboard/modules-dashboard.html">Dashboard Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../google-maps/modules-google-maps.html">Google Maps Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../party/index-party.html">Party</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../product/index-product.html">Product</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../authentication/index-authentication.html">Authentication</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../notification-email/modules-notification-email.html">Notification Email Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../user-role/modules-user-role.html">User Role Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../web/index-web.html">Web</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Tryton Test</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../index-modules.html">App Modules</a> &raquo;</li>
+        
+          <li><a href="index-sale.html">Sale</a> &raquo;</li>
+        
+      <li>Sale Module</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../_sources/modules/sale/modules-sale.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="sale-module">
+<span id="modules-sale"></span><h1>Sale Module<a class="headerlink" href="#sale-module" title="Permalink to this headline">¶</a></h1>
+<p>The sale module defines the Sale model.</p>
+<div class="section" id="sale">
+<h2>Sale<a class="headerlink" href="#sale" title="Permalink to this headline">¶</a></h2>
+<p>The sale is mainly defined by a party to which the products will be
+sold and a list of sale lines, each one containing a product and a
+quantity. Here is the extensive list of the fields, most of them are
+optional or completed with sensible default values:</p>
+<ul>
+<li><p class="first">Party: The customer.</p>
+</li>
+<li><p class="first">Contact: The contact who placed the order.</p>
+</li>
+<li><p class="first">Invoice Party: An optional different party to invoice.</p>
+</li>
+<li><p class="first">Invoice Address: The invoice address of the customer.</p>
+</li>
+<li><p class="first">Shipment Party: An optional different party where the shipment will be sent.</p>
+</li>
+<li><p class="first">Shipment Address: The address where the shipment will be sent.</p>
+</li>
+<li><p class="first">Description: An optional description for the order.</p>
+</li>
+<li><p class="first">Number: The internal reference of the sale (will be generated
+automatically on confirmation).</p>
+</li>
+<li><p class="first">Reference: The optional external reference of the order.</p>
+</li>
+<li><p class="first">Sale Date: The date the sale is made.</p>
+</li>
+<li><p class="first">Payment Term: Define which payment term will be use for the future
+invoice.</p>
+</li>
+<li><p class="first">Warehouse: Define the warehouse from which the goods will be sent.</p>
+</li>
+<li><p class="first">Currency: define the currency to use for this sale. All product
+prices will be computed accordingly.</p>
+</li>
+<li><p class="first">Sale Lines:</p>
+<ul class="simple">
+<li>Type: The type of the line. The default value is <em>Line</em> which
+means that the current sale line contains the fields defined
+hereunder. The other values of Type (<em>Comment</em>, <em>Subtotal</em>,
+<em>Title</em>) are used to add extra lines that will appear on the
+report, thus allowing to easily customise it.</li>
+<li>Sequence: Allow to order lines. The value of this field is also
+updated with a drag and drop between the lines.</li>
+<li>Product: An optional reference to the product to sale.</li>
+<li>Description: The description of the product to sale.</li>
+<li>Quantity: The quantity to sale.</li>
+<li>Unit: The unit of measure in which is expressed the quantity.</li>
+<li>Unit Price: The unit price of the product expressed in the
+currency of the sale.</li>
+<li>Amount: The amount of the current line (Unit Price multiplied by
+Quantity).</li>
+<li>Taxes: The list of taxes that will be applied to the current line.</li>
+</ul>
+</li>
+<li><p class="first">Invoice State: The state of the invoice related to the sale.</p>
+</li>
+<li><p class="first">Shipment State: The state of the shipment related to the sale.</p>
+</li>
+<li><p class="first">Untaxed: The untaxed amount.</p>
+</li>
+<li><p class="first">Tax: The tax amount.</p>
+</li>
+<li><p class="first">Total: The total amount.</p>
+</li>
+<li><p class="first">State: The state of the sale. May take one of the following
+values: Draft, Quotation, Confirmed, Processing, Cancelled.</p>
+</li>
+<li><p class="first">Company: The company which issue the sale order.</p>
+</li>
+<li><p class="first">Invoice Method: May take one of the following values:</p>
+<ul class="simple">
+<li>On Order Processed: The invoice is created when the sale order is
+processed.</li>
+<li>On Shipment Sent: The invoice is created when the shipment is sent
+and will contains the shipped quantities. If there are several
+shipments for the same sale, several invoices will be created.</li>
+<li>Manual: Tryton doesn’t create any invoice automatically.</li>
+</ul>
+</li>
+<li><p class="first">Shipment Method: May take one of the following values:</p>
+<ul class="simple">
+<li>On Order Processed: The customer shipment is created when the sale
+order is processed.</li>
+<li>On Invoice Paid: The customer shipment is created when the invoice
+is paid.</li>
+<li>Manual: Tryton doesn’t create any shipment automatically.</li>
+</ul>
+<p>One should note that choosing <em>On Shipment Sent</em> for the Invoice
+Method and <em>On Invoice Paid</em> for the Shipment Method is an invalid
+combination.</p>
+</li>
+<li><p class="first">Comments: A text fields to add custom comments.</p>
+</li>
+<li><p class="first">Invoices: The list of related invoices.</p>
+</li>
+<li><p class="first">Moves: The list of related stock moves.</p>
+</li>
+<li><p class="first">Shipments: The list of related shipments.</p>
+</li>
+<li><p class="first">Return Shipments: The list of related shipments return.</p>
+</li>
+</ul>
+<p>The <em>Sale</em> report allow to print the sale orders or to send
+them by mail.</p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="modules-sale-advance-payment.html" class="btn btn-neutral float-right" title="Sale Advance Payment Module" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="index-sale.html" class="btn btn-neutral float-left" title="Sale" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020, Ume Abraham Kalu (Test Documentation)
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

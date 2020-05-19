@@ -1,0 +1,645 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Configuration file for Tryton &mdash; Tryton Test 0.1 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="How to setup a database" href="setup_database.html" />
+    <link rel="prev" title="How to install Tryton" href="install.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> Tryton Test
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../client-desktop/index-client-desktop.html">Tryton Desktop Client</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../web-client/index-web-client.html">Tryton Web Client</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../index-server.html">Tryton Server</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../index-server.html#first-steps">First steps</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index-server.html#the-model-layer">The model layer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index-server.html#the-view-layer">The view layer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index-server.html#the-development-process">The development process</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../index-server.html#contents">Contents</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="index-topics.html">Using trytond</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="install.html">How to install Tryton</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">Configuration file for Tryton</a></li>
+<li class="toctree-l4"><a class="reference internal" href="setup_database.html">How to setup a database</a></li>
+<li class="toctree-l4"><a class="reference internal" href="logs.html">Logging configuration</a></li>
+<li class="toctree-l4"><a class="reference internal" href="start_server.html">How to start the server</a></li>
+<li class="toctree-l4"><a class="reference internal" href="models/index-topics-models.html">Models</a></li>
+<li class="toctree-l4"><a class="reference internal" href="backend_types.html">Backend Types supported</a></li>
+<li class="toctree-l4"><a class="reference internal" href="models/fields_default_value.html">Default value of fields</a></li>
+<li class="toctree-l4"><a class="reference internal" href="models/fields_on_change.html">on_change of fields</a></li>
+<li class="toctree-l4"><a class="reference internal" href="domain.html">Domain</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyson.html">PYSON</a></li>
+<li class="toctree-l4"><a class="reference internal" href="access_rights.html">Access Rights</a></li>
+<li class="toctree-l4"><a class="reference internal" href="user_errors_warnings.html">User Errors and Warnings</a></li>
+<li class="toctree-l4"><a class="reference internal" href="triggers.html">Triggers</a></li>
+<li class="toctree-l4"><a class="reference internal" href="actions.html">Actions</a></li>
+<li class="toctree-l4"><a class="reference internal" href="views/index-topics-views.html">Views</a></li>
+<li class="toctree-l4"><a class="reference internal" href="views/extension.html">Extending View</a></li>
+<li class="toctree-l4"><a class="reference internal" href="wizard.html">Wizard</a></li>
+<li class="toctree-l4"><a class="reference internal" href="reports/index-topics-reports.html">Reports</a></li>
+<li class="toctree-l4"><a class="reference internal" href="rpc.html">Remote Procedure Call</a></li>
+<li class="toctree-l4"><a class="reference internal" href="task_queue.html">Task Queue</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cron.html">Scheduled Actions</a></li>
+<li class="toctree-l4"><a class="reference internal" href="user_application.html">User Application</a></li>
+<li class="toctree-l4"><a class="reference internal" href="bus.html">Sending notifications</a></li>
+<li class="toctree-l4"><a class="reference internal" href="modules/index-topics-modules.html">Modules</a></li>
+<li class="toctree-l4"><a class="reference internal" href="translation.html">Translation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="testing.html">Testing</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../ref/ref-index.html">API Reference</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../index-server.html#indices-glossary-and-tables">Indices, glossary and tables</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../client-library/index-client-library.html">Tryton Scripting Client</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../modules/index-modules.html">App Modules</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Tryton Test</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../index-server.html">Tryton Server</a> &raquo;</li>
+        
+          <li><a href="index-topics.html">Using trytond</a> &raquo;</li>
+        
+      <li>Configuration file for Tryton</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../_sources/server/topics/configuration.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="configuration-file-for-tryton">
+<span id="topics-configuration"></span><h1>Configuration file for Tryton<a class="headerlink" href="#configuration-file-for-tryton" title="Permalink to this headline">¶</a></h1>
+<p>The configuration file controls some aspects of the behavior of Tryton.
+The file uses a simple ini-file format. It consists of sections, led by a
+<cite>[section]</cite> header and followed by <cite>name = value</cite> entries:</p>
+<div class="highlight-ini notranslate"><div class="highlight"><pre><span></span><span class="k">[database]</span>
+<span class="na">uri</span> <span class="o">=</span> <span class="s">postgresql://user:password@localhost/</span>
+<span class="na">path</span> <span class="o">=</span> <span class="s">/var/lib/trytond</span>
+</pre></div>
+</div>
+<p>For more information see <a class="reference external" href="http://docs.python.org/2/library/configparser.html" target="_blank">ConfigParser</a>.</p>
+<p>The default value of any option can be changed using environment variables
+with names using this syntax: <cite>TRYTOND_&lt;SECTION&gt;__&lt;NAME&gt;</cite>.</p>
+<div class="section" id="sections">
+<h2>Sections<a class="headerlink" href="#sections" title="Permalink to this headline">¶</a></h2>
+<p>This section describes the different main sections that may appear in a Tryton
+configuration file, the purpose of each section, its possible keys, and their
+possible values.
+Some modules could request the usage of other sections for which the guideline
+asks them to be named like their module.</p>
+<div class="section" id="web">
+<h3>web<a class="headerlink" href="#web" title="Permalink to this headline">¶</a></h3>
+<p>Defines the behavior of the web interface.</p>
+<div class="section" id="listen">
+<h4>listen<a class="headerlink" href="#listen" title="Permalink to this headline">¶</a></h4>
+<p>Defines the couple of host (or IP address) and port number separated by a colon
+to listen on.</p>
+<p>Default <cite>localhost:8000</cite></p>
+</div>
+<div class="section" id="hostname">
+<h4>hostname<a class="headerlink" href="#hostname" title="Permalink to this headline">¶</a></h4>
+<p>Defines the hostname to use when generating a URL when there is no request
+context available, for example during a cron job.</p>
+</div>
+<div class="section" id="root">
+<h4>root<a class="headerlink" href="#root" title="Permalink to this headline">¶</a></h4>
+<p>Defines the root path served by <cite>GET</cite> requests.</p>
+<p>Default: Under the <cite>www</cite> directory of user’s home running <cite>trytond</cite>.</p>
+</div>
+<div class="section" id="num-proxies">
+<h4>num_proxies<a class="headerlink" href="#num-proxies" title="Permalink to this headline">¶</a></h4>
+<p>The number of proxy servers in front of <cite>trytond</cite>.</p>
+<p>Default: 0</p>
+</div>
+<div class="section" id="cache-timeout">
+<h4>cache_timeout<a class="headerlink" href="#cache-timeout" title="Permalink to this headline">¶</a></h4>
+<p>The cache timeout in seconds.</p>
+<p>Default: 12h</p>
+</div>
+<div class="section" id="cors">
+<h4>cors<a class="headerlink" href="#cors" title="Permalink to this headline">¶</a></h4>
+<p>The list (one per line) of origins allowed for <a class="reference external" href="https://en.wikipedia.org/wiki/Cross-origin_resource_sharing" target="_blank">Cross-Origin Resource sharing</a>.</p>
+</div>
+</div>
+<div class="section" id="database">
+<h3>database<a class="headerlink" href="#database" title="Permalink to this headline">¶</a></h3>
+<p>Defines how the database is managed.</p>
+<div class="section" id="uri">
+<h4>uri<a class="headerlink" href="#uri" title="Permalink to this headline">¶</a></h4>
+<p>Contains the URI to connect to the SQL database. The URI follows the <a class="reference external" href="http://tools.ietf.org/html/rfc3986" target="_blank">RFC-3986</a>.
+The typical form is:</p>
+<blockquote>
+<div>database://username:password&#64;host:port/</div></blockquote>
+<p>Default: The value of the environment variable <cite>TRYTOND_DATABASE_URI</cite> or
+<cite>sqlite://</cite> if not set.</p>
+<p>The available databases are:</p>
+<div class="section" id="postgresql">
+<h5>PostgreSQL<a class="headerlink" href="#postgresql" title="Permalink to this headline">¶</a></h5>
+<p><cite>pyscopg2</cite> supports two type of connections:</p>
+<blockquote>
+<div><ul class="simple">
+<li>TCP/IP connection: <cite>postgresql://user:password&#64;localhost:5432/</cite></li>
+<li>Unix domain connection: <cite>postgresql://username:password&#64;/</cite></li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="sqlite">
+<h5>SQLite<a class="headerlink" href="#sqlite" title="Permalink to this headline">¶</a></h5>
+<p>The only possible URI is: <cite>sqlite://</cite></p>
+</div>
+</div>
+<div class="section" id="path">
+<h4>path<a class="headerlink" href="#path" title="Permalink to this headline">¶</a></h4>
+<p>The directory where Tryton stores files and so the user running <cite>trytond</cite>
+must have write access on this directory.</p>
+<p>Default: The <cite>db</cite> folder under the user home directory running <cite>trytond</cite>.</p>
+</div>
+<div class="section" id="list">
+<h4>list<a class="headerlink" href="#list" title="Permalink to this headline">¶</a></h4>
+<p>A boolean value to list available databases.</p>
+<p>Default: <cite>True</cite></p>
+</div>
+<div class="section" id="retry">
+<h4>retry<a class="headerlink" href="#retry" title="Permalink to this headline">¶</a></h4>
+<p>The number of retries when a database operational error occurs during a request.</p>
+<p>Default: <cite>5</cite></p>
+</div>
+<div class="section" id="language">
+<h4>language<a class="headerlink" href="#language" title="Permalink to this headline">¶</a></h4>
+<p>The main language of the database that will be used for storage in the main
+table for translations.</p>
+<p>Default: <cite>en</cite></p>
+</div>
+<div class="section" id="default-name">
+<h4>default_name<a class="headerlink" href="#default-name" title="Permalink to this headline">¶</a></h4>
+<p>The name of the database to use for operations without a database name.
+Default: <cite>template1</cite> for PostgreSQL, <cite>:memory:</cite> for SQLite.</p>
+</div>
+</div>
+<div class="section" id="request">
+<h3>request<a class="headerlink" href="#request" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="max-size">
+<h4>max_size<a class="headerlink" href="#max-size" title="Permalink to this headline">¶</a></h4>
+<p>The maximum size in bytes of unauthenticated request (zero means no limit).</p>
+<p>Default: 2MB</p>
+</div>
+<div class="section" id="max-size-authenticated">
+<h4>max_size_authenticated<a class="headerlink" href="#max-size-authenticated" title="Permalink to this headline">¶</a></h4>
+<p>The maximum size in bytes of an authenticated request (zero means no limit).</p>
+<p>Default: 2GB</p>
+</div>
+</div>
+<div class="section" id="cache">
+<h3>cache<a class="headerlink" href="#cache" title="Permalink to this headline">¶</a></h3>
+<p>Defines size of various cache.</p>
+<div class="section" id="model">
+<h4>model<a class="headerlink" href="#model" title="Permalink to this headline">¶</a></h4>
+<p>The number of different model kept in the cache per transaction.</p>
+<p>Default: <cite>200</cite></p>
+</div>
+<div class="section" id="record">
+<h4>record<a class="headerlink" href="#record" title="Permalink to this headline">¶</a></h4>
+<p>The number of record loaded kept in the cache of the list.
+It can be changed locally using the <cite>_record_cache_size</cite> key in
+<code class="xref py py-attr docutils literal notranslate"><span class="pre">Transaction.context</span></code>.</p>
+<p>Default: <cite>2000</cite></p>
+</div>
+<div class="section" id="field">
+<h4>field<a class="headerlink" href="#field" title="Permalink to this headline">¶</a></h4>
+<p>The number of field to load with an <cite>eager</cite> <code class="xref py py-attr docutils literal notranslate"><span class="pre">Field.loading</span></code>.</p>
+<p>Default: <cite>100</cite></p>
+</div>
+<div class="section" id="clean-timeout">
+<h4>clean_timeout<a class="headerlink" href="#clean-timeout" title="Permalink to this headline">¶</a></h4>
+<p>The minimum number of seconds between two cleanings of the cache.
+If the value is 0, the notification between processes will be done using
+channels if the back-end supports them.</p>
+<p>Default: <cite>300</cite></p>
+</div>
+</div>
+<div class="section" id="queue">
+<h3>queue<a class="headerlink" href="#queue" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="worker">
+<h4>worker<a class="headerlink" href="#worker" title="Permalink to this headline">¶</a></h4>
+<p>Activate asynchronous processing of the tasks. Otherwise they are performed at
+the end of the requests.</p>
+<p>Default: <cite>False</cite></p>
+</div>
+</div>
+<div class="section" id="table">
+<h3>table<a class="headerlink" href="#table" title="Permalink to this headline">¶</a></h3>
+<p>This section allows to override the default generated table name for a
+<code class="xref py py-class docutils literal notranslate"><span class="pre">ModelSQL</span></code>. The main goal is to bypass limitation on the name length of
+the database backend.
+For example:</p>
+<div class="highlight-ini notranslate"><div class="highlight"><pre><span></span><span class="k">[table]</span>
+<span class="na">account.invoice.line</span> <span class="o">=</span> <span class="s">acc_inv_line</span>
+<span class="na">account.invoice.tax</span> <span class="o">=</span> <span class="s">acc_inv_tax</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="ssl">
+<h3>ssl<a class="headerlink" href="#ssl" title="Permalink to this headline">¶</a></h3>
+<p>Activates <a class="reference external" href="http://en.wikipedia.org/wiki/Secure_Sockets_Layer" target="_blank">SSL</a> on all network protocols.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last"><a class="reference external" href="http://en.wikipedia.org/wiki/Secure_Sockets_Layer" target="_blank">SSL</a> is activated by defining privatekey.
+Please refer to <a class="reference external" href="https://docs.python.org/library/ssl.html#ssl.wrap_socket" target="_blank">SSL-CERT</a> on how to use private keys and certficates.</p>
+</div>
+<div class="section" id="privatekey">
+<h4>privatekey<a class="headerlink" href="#privatekey" title="Permalink to this headline">¶</a></h4>
+<p>The path to the private key.</p>
+</div>
+<div class="section" id="certificate">
+<h4>certificate<a class="headerlink" href="#certificate" title="Permalink to this headline">¶</a></h4>
+<p>The path to the certificate.</p>
+</div>
+</div>
+<div class="section" id="email">
+<h3>email<a class="headerlink" href="#email" title="Permalink to this headline">¶</a></h3>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Email settings can be tested with the <cite>trytond-admin</cite> command</p>
+</div>
+<div class="section" id="id1">
+<h4>uri<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h4>
+<p>The <a class="reference external" href="http://tools.ietf.org/html/draft-earhart-url-smtp-00" target="_blank">SMTP-URL</a> to connect to the SMTP server which is extended to support <a class="reference external" href="http://en.wikipedia.org/wiki/Secure_Sockets_Layer" target="_blank">SSL</a>
+and <a class="reference external" href="http://en.wikipedia.org/wiki/STARTTLS" target="_blank">STARTTLS</a>.
+The available protocols are:</p>
+<blockquote>
+<div><ul class="simple">
+<li><cite>smtp</cite>: simple SMTP</li>
+<li><cite>smtp+tls</cite>: SMTP with STARTTLS</li>
+<li><cite>smtps</cite>: SMTP with SSL</li>
+</ul>
+</div></blockquote>
+<p>The uri accepts the following additional parameters:</p>
+<ul class="simple">
+<li><cite>local_hostname</cite>: used as FQDN of the local host in the HELO/EHLO commands,
+if omited it will use the value of <cite>socket.getfqdn()</cite>.</li>
+<li><cite>timeout</cite>: A number of seconds used as timeout for blocking operations. A
+<cite>socket.timeout</cite> will be raised when exceeded. If omited the default timeout
+will be used.</li>
+</ul>
+<p>Default: <cite>smtp://localhost:25</cite></p>
+</div>
+<div class="section" id="from">
+<h4>from<a class="headerlink" href="#from" title="Permalink to this headline">¶</a></h4>
+<p>Defines the default <cite>From</cite> address (using <a class="reference external" href="https://tools.ietf.org/html/rfc822" target="_blank">RFC-822</a>) for emails sent by Tryton.</p>
+<p>For example:</p>
+<div class="highlight-ini notranslate"><div class="highlight"><pre><span></span><span class="na">from: &quot;Company Inc&quot; &lt;info@example.com&gt;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="session">
+<h3>session<a class="headerlink" href="#session" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="authentications">
+<h4>authentications<a class="headerlink" href="#authentications" title="Permalink to this headline">¶</a></h4>
+<p>A comma separated list of login methods to use to authenticate the user.
+By default, Tryton supports only the <cite>password</cite> method which compare the
+password entered by the user against a stored hash. But other modules can
+define new methods (please refers to their documentation).
+The methods are tested following the order of the list.</p>
+<p>Default: <cite>password</cite></p>
+</div>
+<div class="section" id="max-age">
+<h4>max_age<a class="headerlink" href="#max-age" title="Permalink to this headline">¶</a></h4>
+<p>The time in seconds that a session stay valid.</p>
+<p>Default: <cite>2592000</cite> (30 days)</p>
+</div>
+<div class="section" id="timeout">
+<h4>timeout<a class="headerlink" href="#timeout" title="Permalink to this headline">¶</a></h4>
+<p>The time in seconds without activity before the session is no more fresh.</p>
+<p>Default: <cite>300</cite> (5 minutes)</p>
+</div>
+<div class="section" id="max-attempt">
+<h4>max_attempt<a class="headerlink" href="#max-attempt" title="Permalink to this headline">¶</a></h4>
+<p>The maximum authentication attempt before the server answers unconditionally
+<cite>Too Many Requests</cite> for any other attempts. The counting is done on all
+attempts over a period of <cite>timeout</cite>.</p>
+<p>Default: <cite>5</cite></p>
+</div>
+<div class="section" id="max-attempt-ip-network">
+<h4>max_attempt_ip_network<a class="headerlink" href="#max-attempt-ip-network" title="Permalink to this headline">¶</a></h4>
+<p>The maximum authentication attempt from the same network before the server
+answers unconditionally <cite>Too Many Requests</cite> for any other attempts. The
+counting is done on all attempts over a period of <cite>timeout</cite>.</p>
+<p>Default: <cite>300</cite></p>
+</div>
+<div class="section" id="ip-network-4">
+<h4>ip_network_4<a class="headerlink" href="#ip-network-4" title="Permalink to this headline">¶</a></h4>
+<p>The network prefix to apply on IPv4 address for counting the authentication
+attempts.</p>
+<p>Default: <cite>32</cite></p>
+</div>
+<div class="section" id="ip-network-6">
+<h4>ip_network_6<a class="headerlink" href="#ip-network-6" title="Permalink to this headline">¶</a></h4>
+<p>The network prefix to apply on IPv6 address for counting the authentication
+attempts.</p>
+<p>Default: <cite>56</cite></p>
+</div>
+</div>
+<div class="section" id="password">
+<h3>password<a class="headerlink" href="#password" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="length">
+<h4>length<a class="headerlink" href="#length" title="Permalink to this headline">¶</a></h4>
+<p>The minimal length required for the user password.</p>
+<p>Default: <cite>8</cite></p>
+</div>
+<div class="section" id="forbidden">
+<h4>forbidden<a class="headerlink" href="#forbidden" title="Permalink to this headline">¶</a></h4>
+<p>The path to a file containing one forbidden password per line.</p>
+</div>
+<div class="section" id="entropy">
+<h4>entropy<a class="headerlink" href="#entropy" title="Permalink to this headline">¶</a></h4>
+<p>The ratio of non repeated characters for the user password.</p>
+<p>Default: <cite>0.75</cite></p>
+</div>
+<div class="section" id="reset-timeout">
+<h4>reset_timeout<a class="headerlink" href="#reset-timeout" title="Permalink to this headline">¶</a></h4>
+<p>The time in seconds until the reset password expires.</p>
+<p>Default: <cite>86400</cite> (24h)</p>
+</div>
+<div class="section" id="passlib">
+<h4>passlib<a class="headerlink" href="#passlib" title="Permalink to this headline">¶</a></h4>
+<p>The path to the <a class="reference external" href="https://passlib.readthedocs.io/en/stable/narr/context-tutorial.html#loading-saving-a-cryptcontext" target="_blank">INI file to load as CryptContext</a>.
+If not path is set, Tryton will use the schemes <cite>bcrypt</cite> or <cite>pbkdf2_sha512</cite>.</p>
+<p>Default: <cite>None</cite></p>
+</div>
+</div>
+<div class="section" id="attachment">
+<h3>attachment<a class="headerlink" href="#attachment" title="Permalink to this headline">¶</a></h3>
+<p>Defines how to store the attachments</p>
+<div class="section" id="filestore">
+<h4>filestore<a class="headerlink" href="#filestore" title="Permalink to this headline">¶</a></h4>
+<p>A boolean value to store attachment in the <a class="reference internal" href="../ref/filestore.html#ref-filestore"><span class="std std-ref">FileStore</span></a>.</p>
+<p>Default: <cite>True</cite></p>
+</div>
+<div class="section" id="store-prefix">
+<h4>store_prefix<a class="headerlink" href="#store-prefix" title="Permalink to this headline">¶</a></h4>
+<p>The prefix to use with the <cite>FileStore</cite>.</p>
+<p>Default: <cite>None</cite></p>
+</div>
+</div>
+<div class="section" id="bus">
+<h3>bus<a class="headerlink" href="#bus" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="allow-subscribe">
+<h4>allow_subscribe<a class="headerlink" href="#allow-subscribe" title="Permalink to this headline">¶</a></h4>
+<p>A boolean value to allow clients to subscribe to bus channels.</p>
+<p>Default: <cite>False</cite></p>
+</div>
+<div class="section" id="url-host">
+<h4>url_host<a class="headerlink" href="#url-host" title="Permalink to this headline">¶</a></h4>
+<p>If set redirects bus requests to the host URL.</p>
+</div>
+<div class="section" id="long-polling-timeout">
+<h4>long_polling_timeout<a class="headerlink" href="#long-polling-timeout" title="Permalink to this headline">¶</a></h4>
+<p>The time in seconds to keep the connection to the client opened when using long
+polling for bus messages</p>
+<p>Default: <cite>300</cite></p>
+</div>
+<div class="section" id="id2">
+<h4>cache_timeout<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h4>
+<p>The number of seconds a message should be kept by the queue before being
+discarded.</p>
+<p>Default: <cite>300</cite></p>
+</div>
+<div class="section" id="select-timeout">
+<h4>select_timeout<a class="headerlink" href="#select-timeout" title="Permalink to this headline">¶</a></h4>
+<p>The timeout duration of the select call when listening on a channel.</p>
+<p>Default: <cite>5</cite></p>
+</div>
+</div>
+<div class="section" id="html">
+<h3>html<a class="headerlink" href="#html" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="src">
+<h4>src<a class="headerlink" href="#src" title="Permalink to this headline">¶</a></h4>
+<p>The URL pointing to <a class="reference external" href="https://www.tiny.cloud/" target="_blank">TinyMCE</a> editor.</p>
+<p>Default: <cite>https://cloud.tinymce.com/stable/tinymce.min.js</cite></p>
+</div>
+<div class="section" id="plugins">
+<h4>plugins<a class="headerlink" href="#plugins" title="Permalink to this headline">¶</a></h4>
+<p>The space separated list of TinyMCE plugins to load.
+It can be overridden for specific models and fields using the names:
+<cite>plugins-&lt;model&gt;-&lt;field&gt;</cite> or <cite>plugins-&lt;model&gt;</cite>.</p>
+<p>Default: ``</p>
+</div>
+<div class="section" id="css">
+<h4>css<a class="headerlink" href="#css" title="Permalink to this headline">¶</a></h4>
+<p>The JSON list of CSS files to load.
+It can be overridden for specific models and fields using the names:
+<cite>css-&lt;model&gt;-&lt;field&gt;</cite> or <cite>css-&lt;model&gt;</cite>.</p>
+<p>Default: <cite>[]</cite></p>
+</div>
+<div class="section" id="class">
+<h4>class<a class="headerlink" href="#class" title="Permalink to this headline">¶</a></h4>
+<p>The class to add on the body.
+It can be overridden for specific models and fields using the names:
+<cite>class-&lt;model&gt;-&lt;field&gt;</cite> or <cite>class-&lt;model&gt;</cite>.</p>
+<p>Default: <cite>‘’</cite></p>
+</div>
+</div>
+<div class="section" id="wsgi-middleware">
+<h3>wsgi middleware<a class="headerlink" href="#wsgi-middleware" title="Permalink to this headline">¶</a></h3>
+<p>The section lists the <a class="reference external" href="https://en.wikipedia.org/wiki/Web_Server_Gateway_Interface#Specification_overview" target="_blank">WSGI middleware</a> class to load.
+Each middleware can be configured with a section named <cite>wsgi &lt;middleware&gt;</cite>
+containing <cite>args</cite> and <cite>kwargs</cite> options.</p>
+<p>Example:</p>
+<div class="highlight-ini notranslate"><div class="highlight"><pre><span></span><span class="k">[wsgi middleware]</span>
+<span class="na">ie</span> <span class="o">=</span> <span class="s">werkzeug.contrib.fixers.InternetExplorerFix</span>
+
+<span class="k">[wsgi ie]</span>
+<span class="na">kwargs</span><span class="o">=</span><span class="s">{&#39;fix_attach&#39;: False}</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="setup_database.html" class="btn btn-neutral float-right" title="How to setup a database" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="install.html" class="btn btn-neutral float-left" title="How to install Tryton" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020, Ume Abraham Kalu (Test Documentation)
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

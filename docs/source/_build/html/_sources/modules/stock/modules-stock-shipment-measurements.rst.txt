@@ -1,0 +1,8 @@
+.. _modules-stock-shipment-measurements:
+
+Stock Shipment Measurements Module
+##################################
+
+The Stock Shipment Measurements module adds weight and volume on shipments and
+packages.
+They are computed using the measurement and the quantity of their moves.

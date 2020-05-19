@@ -1,0 +1,451 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Account Invoice Module &mdash; Tryton Test 0.1 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Account Invoice Correction Module" href="modules-account-invoice-correction.html" />
+    <link rel="prev" title="German Account Module" href="modules-account-de-skr03.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> Tryton Test
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../client-desktop/index-client-desktop.html">Tryton Desktop Client</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../web-client/index-web-client.html">Tryton Web Client</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../server/index-server.html">Tryton Server</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../client-library/index-client-library.html">Tryton Scripting Client</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../index-modules.html">App Modules</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="account.html">Accounting</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="modules-account.html">Account Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="modules-account-asset.html">Account Asset Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="modules-account-be.html">Belgian Account Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="modules-account-cash-rounding.html">Account Cash Rounding Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="modules-account-credit-limit.html">Account Credit Limit</a></li>
+<li class="toctree-l3"><a class="reference internal" href="modules-account-deposit.html">Account Deposit Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="modules-account-dunning.html">Account Dunning Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="modules-account-dunning-email.html">Account Dunning Email Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="modules-account-dunning-fee.html">Account Dunning Fee Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="modules-account-dunning-letter.html">Account Dunning Letter Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="modules-account-es.html">Spanish Account Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="modules-account-eu.html">Account Europe Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="modules-account-fr.html">French Account Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="modules-account-fr-chorus.html">Account French Chorus Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="modules-account-de-skr03.html">German Account Module</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Account Invoice Module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#invoice">Invoice</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#invoice-line">Invoice Line</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#invoice-tax">Invoice Tax</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#payment-term">Payment Term</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#payment-method">Payment Method</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#fiscal-year-sequences">Fiscal Year Sequences</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#configuration">Configuration</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="modules-account-invoice-correction.html">Account Invoice Correction Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="modules-account-invoice-history.html">Account Invoice History Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="modules-account-invoice-line-standalone.html">Account Invoice Line Standalone Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="modules-account-invoice-secondary-unit.html">Account Invoice Secondary Unit Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="modules-account-invoice-stock.html">Account Invoice Stock Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="modules-account-payment.html">Account Payment Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="modules-account-payment-clearing.html">Account Payment Clearing Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="modules-account-payment-sepa.html">Account Payment SEPA Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="modules-account-payment-sepa-cfonb.html">Account Payment SEPA CFONB Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="modules-account-payment-stripe.html">Account Payment Stripe Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="modules-account-product.html">Account Product Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="modules-account-statement.html">Account Statement Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="modules-account-statement-aeb43.html">Read the Docs readthedocs.org</a></li>
+<li class="toctree-l3"><a class="reference internal" href="modules-account-statement-coda.html">Account Statement Coda Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="modules-account-statement-ofx.html">Account Statement OFX Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="modules-account-statement-rule.html">Account Statement Rule Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="modules-account-stock-anglo-saxon.html">Account Stock Anglo-Saxon Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="modules-account-stock-continental.html">Account Stock Continental Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="modules-account-stock-landed-cost.html">Account Stock Landed Cost Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="modules-account-stock-landed-cost-weight.html">Account Stock Landed Cost Weight Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="modules-account-tax-cash.html">Account Tax Cash Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="modules-account-tax-rule-country.html">Account Tax Rule Country</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../analytic-accounting/index-analytic-accounting.html">Analytic Accounting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../commission/index-commission.html">Commission</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../edocument/index-edocument.html">Electronic Document</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../marketing/index-marketing.html">Marketing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../production/index-production.html">Production</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../project/index-project.html">Project</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../purchase/index-purchase.html">Purchase</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sale/index-sale.html">Sale</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sale_subscription/index-sale_subscription.html">Sale Subscription</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../stock/index-stock.html">Stock</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../timesheet/index-timesheet.html">Timesheet</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../bank/modules-bank.html">Bank Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../company/index-company.html">Company</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../carrier/index-carrier.html">Carrier</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../country/modules-country.html">Country Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../currency/modules-currency.html">Currency Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../customs/modules-customs.html">Customs Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../dashboard/modules-dashboard.html">Dashboard Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../google-maps/modules-google-maps.html">Google Maps Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../party/index-party.html">Party</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../product/index-product.html">Product</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../authentication/index-authentication.html">Authentication</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../notification-email/modules-notification-email.html">Notification Email Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../user-role/modules-user-role.html">User Role Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../web/index-web.html">Web</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Tryton Test</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../index-modules.html">App Modules</a> &raquo;</li>
+        
+          <li><a href="account.html">Accounting</a> &raquo;</li>
+        
+      <li>Account Invoice Module</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../_sources/modules/account/modules-account-invoice.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="account-invoice-module">
+<span id="modules-account-invoice"></span><h1>Account Invoice Module<a class="headerlink" href="#account-invoice-module" title="Permalink to this headline">¶</a></h1>
+<p>The <code class="docutils literal notranslate"><span class="pre">account_invoice</span></code> module adds the invoice, payment term.</p>
+<div class="section" id="invoice">
+<h2>Invoice<a class="headerlink" href="#invoice" title="Permalink to this headline">¶</a></h2>
+<p>There are 4 types of invoice: <em>Invoice</em>, <em>Supplier Invoice</em>, <em>Credit Note</em> and
+<em>Supplier Credit Note</em>. An invoice can be in <em>Draft</em>, <em>Validated</em>, <em>Posted</em>,
+<em>Paid</em> or <em>Canceled</em>.</p>
+<ul class="simple">
+<li>Company: The company for which the invoice is created.</li>
+<li>Tax Identifier: The tax identifier that will be printed on the invoice
+(By default the first tax identifier of the company).</li>
+<li>Number: The invoice number set on validation for supplier invoices and on
+posting for others using the sequence defined on the fiscalyear.</li>
+<li>Reference: The optional external reference of the invoice.</li>
+<li>Party: The party for which or from which the invoice is issued.</li>
+<li>Invoice Address: The address of the party.</li>
+<li>Party Tax Identifier: The tax identifier of the party.</li>
+<li>Description: An optional description of the invoice.</li>
+<li>Comment: A text fields to add custom comments.</li>
+<li>Invoice Date: The date of the invoice. It is set on posting the invoice if not.</li>
+<li>Accounting Date: The date to use for accounting if set otherwise it is the
+invoice date.</li>
+<li>Currency: The currency of the invoice.</li>
+<li>Journal: The journal on which the accounting must be booked.</li>
+<li>Account: The payable or receivable account.</li>
+<li>Payment Term: The payment term to apply for the invoice
+(default value comes from the party).</li>
+<li>Lines: The lines invoiced.</li>
+<li>Taxes: The taxes related to the lines.</li>
+<li>Untaxed, Tax, Total Amount: The amounts computed by the invoice.</li>
+<li>Move: The accounting move created by the invoice on validation for supplier
+invoices and on posting for others.</li>
+<li>Cancel Move: The accounting move created to cancel a posted invoice.</li>
+</ul>
+<p>The <em>Invoice</em> report is stored when the invoice is posted and thus it is always
+the same that is returned for consistency.</p>
+<p>A wizard allow to register a cash payment directly on the invoice. The payment
+could be partial or with write-off.</p>
+<p>An other wizard allow to create a credit note from the invoice. If the option
+to refund is checked, the original invoice will be cancelled by the credit note.</p>
+</div>
+<div class="section" id="invoice-line">
+<h2>Invoice Line<a class="headerlink" href="#invoice-line" title="Permalink to this headline">¶</a></h2>
+<p>There are 4 types of lines: <em>Line</em>, <em>Subtotal</em>, <em>Title</em>, <em>Comment</em>.
+The <em>Line</em> are composed of:</p>
+<ul class="simple">
+<li>Product: An optional reference to the product to invoice.</li>
+<li>Account: The account to book the expense or revenue.</li>
+<li>Quantity: The quantity invoiced.</li>
+<li>Unit: The unit of measure in which is expressed the quantity.</li>
+<li>Unit Price: The unit price of the quantity in the currency of the invoice.</li>
+<li>Amount: The amount of the line (Unit Price multiplied by Quantity).</li>
+<li>Description: The description of the product or the line.</li>
+<li>Note: A text fields to add custom comments.</li>
+<li>Taxes: The taxes to apply to the amount of the line.</li>
+</ul>
+</div>
+<div class="section" id="invoice-tax">
+<h2>Invoice Tax<a class="headerlink" href="#invoice-tax" title="Permalink to this headline">¶</a></h2>
+<p>It groups the taxes of all the lines.
+The rounding of the taxes is defined in the accounting configuration and can
+be: <em>Per Document</em> or <em>Per Line</em>.</p>
+<ul class="simple">
+<li>Description: The description of the tax.</li>
+<li>Account: The account on which the tax is booked.</li>
+<li>Base: The base amount on which the tax is computed.</li>
+<li>Base Code: The <em>Tax Code</em> to record the base amount.</li>
+<li>Base Sign: The sign used to record the base amount on the tax code.</li>
+<li>Amount: The amount of the tax.</li>
+<li>Tax Code: The <em>Tax Code</em> to record the tax amount.</li>
+<li>Tax Sing: The sign used to record the tax amount on the tax code.</li>
+<li>Tax: The tax used for computation.</li>
+<li>Manual: A boolean to define manual tax
+(which is not linked to an invoice line).</li>
+</ul>
+</div>
+<div class="section" id="payment-term">
+<h2>Payment Term<a class="headerlink" href="#payment-term" title="Permalink to this headline">¶</a></h2>
+<p>It defines the maximum dates of how an due amount should be paid.</p>
+<ul class="simple">
+<li>Name: The name of the term.</li>
+<li>Description: The long description of the term.</li>
+<li>Lines:<ul>
+<li>Relative Deltas:<ul>
+<li>Day: The day of the month.</li>
+<li>Month: The month of the year.</li>
+<li>Day of the Week: One of the week day.</li>
+<li>Months: The number of months to add.</li>
+<li>Weeks: The number of weeks to add.</li>
+<li>Days: The number of days to add.</li>
+</ul>
+</li>
+<li>Type:<ul>
+<li><em>Fixed</em>:<ul>
+<li>Amount: The maximum fixed amount to pay at this date.</li>
+<li>Currency: The currency of the amount.</li>
+</ul>
+</li>
+<li><em>Percentage on Remainder</em>:<ul>
+<li>Ratio: The ratio to use on the remainder amount.</li>
+<li>Divisor: The reversed ratio.</li>
+</ul>
+</li>
+<li><em>Percentage on Total</em>:<ul>
+<li>Ratio: The ratio to use on the total amount.</li>
+<li>Divisor: The reversed ratio.</li>
+</ul>
+</li>
+<li><em>Remainder</em></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>The computation of relative delta is based on the <a class="reference external" href="http://labix.org/python-dateutil#head-72c4689ec5608067d118b9143cef6bdffb6dad4e" target="_blank">python-dateutil library</a>.
+The payment term create a term for each line as far as there is still a
+remainder amount.</p>
+<p>A wizard is provided to test the behaviour of the payment term. It display
+computed terms base on an amount and a date.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">The last line of payment term must be a remainder.</p>
+</div>
+</div>
+<div class="section" id="payment-method">
+<h2>Payment Method<a class="headerlink" href="#payment-method" title="Permalink to this headline">¶</a></h2>
+<p>The payment options available when paying an invoice. It has the following
+fields:</p>
+<ul class="simple">
+<li>Name</li>
+<li>Company</li>
+<li>Journal: Will be used for creating the payment move</li>
+<li>Credit Account and Debit Account: The accounts used for the payment move
+depending on the amount sign.</li>
+<li>Active: A checkbox that allow to disable the payment method.</li>
+</ul>
+</div>
+<div class="section" id="fiscal-year-sequences">
+<h2>Fiscal Year Sequences<a class="headerlink" href="#fiscal-year-sequences" title="Permalink to this headline">¶</a></h2>
+<p>The sequence used to compute the invoice number is retrieved from the
+fiscalyear sequences model. At least one record must be defined for each
+fiscalyear. Additional criteria can be used like:</p>
+<ul class="simple">
+<li>By period</li>
+</ul>
+</div>
+<div class="section" id="configuration">
+<h2>Configuration<a class="headerlink" href="#configuration" title="Permalink to this headline">¶</a></h2>
+<p>The account_invoice module uses the section <cite>account_invoice</cite> to retrieve some
+parameters:</p>
+<ul class="simple">
+<li><cite>filestore</cite>: a boolean value to store invoice report cache in the FileStore.
+The default value is <cite>False</cite>.</li>
+<li><cite>store_prefix</cite>: the prefix to use with the FileStore. The default value is
+<cite>None</cite>.</li>
+</ul>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="modules-account-invoice-correction.html" class="btn btn-neutral float-right" title="Account Invoice Correction Module" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="modules-account-de-skr03.html" class="btn btn-neutral float-left" title="German Account Module" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020, Ume Abraham Kalu (Test Documentation)
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

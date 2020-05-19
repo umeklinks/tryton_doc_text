@@ -1,0 +1,311 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Stock Package Shipping UPS Module &mdash; Tryton Test 0.1 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Stock Product Location Module" href="modules-stock-product-location.html" />
+    <link rel="prev" title="Stock Package Shipping DPD Module" href="modules-stock-package-shipping-dpd.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> Tryton Test
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../client-desktop/index-client-desktop.html">Tryton Desktop Client</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../web-client/index-web-client.html">Tryton Web Client</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../server/index-server.html">Tryton Server</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../client-library/index-client-library.html">Tryton Scripting Client</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../index-modules.html">App Modules</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../account/account.html">Accounting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../analytic-accounting/index-analytic-accounting.html">Analytic Accounting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../commission/index-commission.html">Commission</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../edocument/index-edocument.html">Electronic Document</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../marketing/index-marketing.html">Marketing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../production/index-production.html">Production</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../project/index-project.html">Project</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../purchase/index-purchase.html">Purchase</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sale/index-sale.html">Sale</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sale_subscription/index-sale_subscription.html">Sale Subscription</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="index-stock.html">Stock</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="modules-stock.html">Stock Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="modules-stock-consignment.html">Stock Consignment Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="modules-stock-forecast.html">Stock Forecast Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="modules-stock-inventory-location.html">Stock Inventory Location Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="modules-stock-location-move.html">Stock Location Move Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="modules-stock-location-sequence.html">Stock Location Sequence Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="modules-stock-lot.html">Stock Lot Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="modules-stock-lot-sled.html">Stock Lot Shelf Life Expiration Date</a></li>
+<li class="toctree-l3"><a class="reference internal" href="modules-stock-lot-unit.html">Stock Lot Unit Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="modules-stock-package.html">Stock Package Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="modules-stock-package-shipping.html">Stock Package Shipping Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="modules-stock-package-shipping-dpd.html">Stock Package Shipping DPD Module</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Stock Package Shipping UPS Module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#ups-carrier-credential">UPS Carrier Credential</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#carrier">Carrier</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#package-type">Package Type</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="modules-stock-product-location.html">Stock Product Location Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="modules-stock-secondary-unit.html">Stock Secondary Unit Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="modules-stock-shipment-measurements.html">Stock Shipment Measurements Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="modules-stock-split.html">Stock Split Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="modules-stock-supply.html">Stock Supply Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="modules-stock-supply-forecast.html">Stock Supply Forecast Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="modules-stock-supply-day.html">Stock Supply Day Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="modules-stock-supply-production.html">Stock Supply Production Module</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../timesheet/index-timesheet.html">Timesheet</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../bank/modules-bank.html">Bank Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../company/index-company.html">Company</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../carrier/index-carrier.html">Carrier</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../country/modules-country.html">Country Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../currency/modules-currency.html">Currency Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../customs/modules-customs.html">Customs Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../dashboard/modules-dashboard.html">Dashboard Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../google-maps/modules-google-maps.html">Google Maps Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../party/index-party.html">Party</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../product/index-product.html">Product</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../authentication/index-authentication.html">Authentication</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../notification-email/modules-notification-email.html">Notification Email Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../user-role/modules-user-role.html">User Role Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../web/index-web.html">Web</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Tryton Test</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../index-modules.html">App Modules</a> &raquo;</li>
+        
+          <li><a href="index-stock.html">Stock</a> &raquo;</li>
+        
+      <li>Stock Package Shipping UPS Module</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../_sources/modules/stock/modules-stock-package-shipping-ups.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="stock-package-shipping-ups-module">
+<span id="modules-stock-package-shipping-ups"></span><h1>Stock Package Shipping UPS Module<a class="headerlink" href="#stock-package-shipping-ups-module" title="Permalink to this headline">¶</a></h1>
+<p>The Stock Package Shipping UPS module allows you to generate the UPS labels per
+package using the UPS webservices.</p>
+<p>The credential for the webservice is specified by the following fields:</p>
+<div class="section" id="ups-carrier-credential">
+<h2>UPS Carrier Credential<a class="headerlink" href="#ups-carrier-credential" title="Permalink to this headline">¶</a></h2>
+<p>This model allows to define the credential used to connect the UPS API.
+The credentials used to connect to the UPS API will be automatically retrieved
+based on the company of the Shipment.</p>
+<ul class="simple">
+<li><em>Company</em>: The company for which those credentials are valid</li>
+<li><em>User ID</em>: The User ID provided by UPS.</li>
+<li><em>Password</em>: The Password used to access the MyUPS Portal.</li>
+<li><em>Account Number</em>: The account number UPS assigned to you when you requested the
+API credentials (also known as the Shipper Number).</li>
+<li><em>License</em>: The License number UPS assigned to you when you requested the API
+credentials</li>
+<li><em>Server</em>: Are those credentials used for accessing the Testing or the
+Production server of UPS.</li>
+<li><em>Use Metric</em>: Use Metric units when communicating with the UPS webservice.</li>
+</ul>
+</div>
+<div class="section" id="carrier">
+<h2>Carrier<a class="headerlink" href="#carrier" title="Permalink to this headline">¶</a></h2>
+<p>The Carrier model is extended with the following fields:</p>
+<ul class="simple">
+<li><em>Service Type</em>: The UPS service type requested</li>
+<li><em>Label Image Format</em>: The Image Format used for the label sent by UPS</li>
+<li><em>Label Image Height</em>: The Height of the label sent by UPS.</li>
+</ul>
+</div>
+<div class="section" id="package-type">
+<h2>Package Type<a class="headerlink" href="#package-type" title="Permalink to this headline">¶</a></h2>
+<p>The Package Type model is extended with the following field:</p>
+<ul class="simple">
+<li><em>UPS Code</em>: The UPS Code of the package.</li>
+</ul>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="modules-stock-product-location.html" class="btn btn-neutral float-right" title="Stock Product Location Module" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="modules-stock-package-shipping-dpd.html" class="btn btn-neutral float-left" title="Stock Package Shipping DPD Module" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020, Ume Abraham Kalu (Test Documentation)
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

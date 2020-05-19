@@ -1,0 +1,516 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Wizard &mdash; Tryton Test 0.1 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="PYSON" href="pyson.html" />
+    <link rel="prev" title="Fields" href="models/fields.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> Tryton Test
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../client-desktop/index-client-desktop.html">Tryton Desktop Client</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../web-client/index-web-client.html">Tryton Web Client</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../index-server.html">Tryton Server</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../index-server.html#first-steps">First steps</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index-server.html#the-model-layer">The model layer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index-server.html#the-view-layer">The view layer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index-server.html#the-development-process">The development process</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../index-server.html#contents">Contents</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../topics/index-topics.html">Using trytond</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="ref-index.html">API Reference</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="models/ref-models-index.html">Models</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">Wizard</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#state">State</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#stateview">StateView</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#statetransition">StateTransition</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#stateaction">StateAction</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#statereport">StateReport</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#button">Button</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyson.html">PYSON</a></li>
+<li class="toctree-l4"><a class="reference internal" href="transaction.html">Transaction</a></li>
+<li class="toctree-l4"><a class="reference internal" href="exceptions.html">Exceptions</a></li>
+<li class="toctree-l4"><a class="reference internal" href="tools/ref-tools-index.html">Tools</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pool.html">Pool</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pool.html#poolmeta">PoolMeta</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pool.html#poolbase">PoolBase</a></li>
+<li class="toctree-l4"><a class="reference internal" href="rpc.html">RPC</a></li>
+<li class="toctree-l4"><a class="reference internal" href="rpc.html#rpccache">RPCCache</a></li>
+<li class="toctree-l4"><a class="reference internal" href="i18n.html">Internationalization</a></li>
+<li class="toctree-l4"><a class="reference internal" href="sendmail.html">Sendmail</a></li>
+<li class="toctree-l4"><a class="reference internal" href="filestore.html">FileStore</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cache.html">Cache</a></li>
+<li class="toctree-l4"><a class="reference internal" href="bus.html">Bus</a></li>
+<li class="toctree-l4"><a class="reference internal" href="tests.html">Test</a></li>
+<li class="toctree-l4"><a class="reference internal" href="tests.html#moduletestcase">ModuleTestCase</a></li>
+<li class="toctree-l4"><a class="reference internal" href="tests.html#helpers">Helpers</a></li>
+<li class="toctree-l4"><a class="reference internal" href="tests.html#tests-tools">Tests tools</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../index-server.html#indices-glossary-and-tables">Indices, glossary and tables</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../client-library/index-client-library.html">Tryton Scripting Client</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../modules/index-modules.html">App Modules</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Tryton Test</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../index-server.html">Tryton Server</a> &raquo;</li>
+        
+          <li><a href="ref-index.html">API Reference</a> &raquo;</li>
+        
+      <li>Wizard</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../_sources/server/ref/wizard.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <span class="target" id="module-trytond.wizard"><span id="ref-wizard"></span></span><div class="section" id="wizard">
+<h1>Wizard<a class="headerlink" href="#wizard" title="Permalink to this headline">¶</a></h1>
+<p>A wizard is a <a class="reference external" href="http://en.wikipedia.org/wiki/Finite-state_machine" target="_blank">finite state machine</a>.</p>
+<p>There is also a more <a class="reference internal" href="../topics/wizard.html#topics-wizard"><span class="std std-ref">practical introduction into wizards</span></a>.</p>
+<dl class="py class">
+<dt id="trytond.wizard.Wizard">
+<em class="property">class </em><code class="descclassname">trytond.wizard.</code><code class="descname">Wizard</code><span class="sig-paren">(</span><em><span class="n">session_id</span></em><span class="sig-paren">)</span><a class="headerlink" href="#trytond.wizard.Wizard" title="Permalink to this definition">¶</a></dt>
+<dd><p>This is the base for any wizard. It contains the engine for the finite
+state machine. A wizard must have some <a class="reference internal" href="#trytond.wizard.State" title="trytond.wizard.State"><code class="xref py py-class docutils literal notranslate"><span class="pre">State</span></code></a> instance attributes
+that the engine will use.</p>
+</dd></dl>
+
+<p>Class attributes are:</p>
+<dl class="py attribute">
+<dt id="trytond.wizard.Wizard.__name__">
+<code class="descclassname">Wizard.</code><code class="descname">__name__</code><a class="headerlink" href="#trytond.wizard.Wizard.__name__" title="Permalink to this definition">¶</a></dt>
+<dd><p>It contains the unique name to reference the wizard throughout the
+platform.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="trytond.wizard.Wizard.start_state">
+<code class="descclassname">Wizard.</code><code class="descname">start_state</code><a class="headerlink" href="#trytond.wizard.Wizard.start_state" title="Permalink to this definition">¶</a></dt>
+<dd><p>It contains the name of the starting state.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="trytond.wizard.Wizard.end_state">
+<code class="descclassname">Wizard.</code><code class="descname">end_state</code><a class="headerlink" href="#trytond.wizard.Wizard.end_state" title="Permalink to this definition">¶</a></dt>
+<dd><p>It contains the name of the ending state.
+If an instance method with this name exists on the wizard, it will be
+called on deletion of the wizard and it may return one of the <a class="reference internal" href="../topics/views/index-topics-views.html#topics-views-client-actions"><span class="std std-ref">client
+side action keywords</span></a>.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="trytond.wizard.Wizard.__rpc__">
+<code class="descclassname">Wizard.</code><code class="descname">__rpc__</code><a class="headerlink" href="#trytond.wizard.Wizard.__rpc__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Same as <a class="reference internal" href="models/models.html#trytond.model.Model.__rpc__" title="trytond.model.Model.__rpc__"><code class="xref py py-attr docutils literal notranslate"><span class="pre">trytond.model.Model.__rpc__</span></code></a>.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="trytond.wizard.Wizard.states">
+<code class="descclassname">Wizard.</code><code class="descname">states</code><a class="headerlink" href="#trytond.wizard.Wizard.states" title="Permalink to this definition">¶</a></dt>
+<dd><p>It contains a dictionary with state name as key and <a class="reference internal" href="#trytond.wizard.State" title="trytond.wizard.State"><code class="xref py py-class docutils literal notranslate"><span class="pre">State</span></code></a> as
+value.</p>
+</dd></dl>
+
+<p>Class methods are:</p>
+<dl class="py method">
+<dt id="trytond.wizard.Wizard.__setup__">
+<em class="property">classmethod </em><code class="descclassname">Wizard.</code><code class="descname">__setup__</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#trytond.wizard.Wizard.__setup__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Setup the class before adding into the <a class="reference internal" href="pool.html#trytond.pool.Pool" title="trytond.pool.Pool"><code class="xref py py-class docutils literal notranslate"><span class="pre">trytond.pool.Pool</span></code></a>.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="trytond.wizard.Wizard.__post_setup__">
+<em class="property">classmethod </em><code class="descclassname">Wizard.</code><code class="descname">__post_setup__</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#trytond.wizard.Wizard.__post_setup__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Setup the class after added into the <a class="reference internal" href="pool.html#trytond.pool.Pool" title="trytond.pool.Pool"><code class="xref py py-class docutils literal notranslate"><span class="pre">trytond.pool.Pool</span></code></a>.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="trytond.wizard.Wizard.__register__">
+<em class="property">classmethod </em><code class="descclassname">Wizard.</code><code class="descname">__register__</code><span class="sig-paren">(</span><em><span class="n">module_name</span></em><span class="sig-paren">)</span><a class="headerlink" href="#trytond.wizard.Wizard.__register__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Register the wizard.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="trytond.wizard.Wizard.create">
+<em class="property">classmethod </em><code class="descclassname">Wizard.</code><code class="descname">create</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#trytond.wizard.Wizard.create" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create a session for the wizard and returns a tuple containing the session
+id, the starting and ending state.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="trytond.wizard.Wizard.delete">
+<em class="property">classmethod </em><code class="descclassname">Wizard.</code><code class="descname">delete</code><span class="sig-paren">(</span><em><span class="n">session_id</span></em><span class="sig-paren">)</span><a class="headerlink" href="#trytond.wizard.Wizard.delete" title="Permalink to this definition">¶</a></dt>
+<dd><p>Delete the session.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="trytond.wizard.Wizard.execute">
+<em class="property">classmethod </em><code class="descclassname">Wizard.</code><code class="descname">execute</code><span class="sig-paren">(</span><em><span class="n">session_id</span></em>, <em><span class="n">data</span></em>, <em><span class="n">state_name</span></em><span class="sig-paren">)</span><a class="headerlink" href="#trytond.wizard.Wizard.execute" title="Permalink to this definition">¶</a></dt>
+<dd><p>Execute the wizard for the state.
+<cite>session_id</cite> is a session id.
+<cite>data</cite> is a dictionary with the session data to update.
+<cite>active_id</cite>, <cite>active_ids</cite>, <cite>active_model</cite> and <cite>action_id</cite> must be set in
+the context according to the records on which the wizard is run.</p>
+</dd></dl>
+
+</div>
+<div class="section" id="state">
+<h1>State<a class="headerlink" href="#state" title="Permalink to this headline">¶</a></h1>
+<dl class="py class">
+<dt id="trytond.wizard.State">
+<em class="property">class </em><code class="descclassname">trytond.wizard.</code><code class="descname">State</code><a class="headerlink" href="#trytond.wizard.State" title="Permalink to this definition">¶</a></dt>
+<dd><p>This is the base for any wizard state.</p>
+</dd></dl>
+
+<p>Instance attributes are:</p>
+<dl class="py attribute">
+<dt id="trytond.wizard.State.name">
+<code class="descclassname">State.</code><code class="descname">name</code><a class="headerlink" href="#trytond.wizard.State.name" title="Permalink to this definition">¶</a></dt>
+<dd><p>The name of the state.</p>
+</dd></dl>
+
+</div>
+<div class="section" id="stateview">
+<h1>StateView<a class="headerlink" href="#stateview" title="Permalink to this headline">¶</a></h1>
+<dl class="py class">
+<dt id="trytond.wizard.StateView">
+<em class="property">class </em><code class="descclassname">trytond.wizard.</code><code class="descname">StateView</code><span class="sig-paren">(</span><em><span class="n">model_name</span></em>, <em><span class="n">view</span></em>, <em><span class="n">buttons</span></em><span class="sig-paren">)</span><a class="headerlink" href="#trytond.wizard.StateView" title="Permalink to this definition">¶</a></dt>
+<dd><p>A <a class="reference internal" href="#trytond.wizard.StateView" title="trytond.wizard.StateView"><code class="xref py py-class docutils literal notranslate"><span class="pre">StateView</span></code></a> is a state that will display a form in the client.
+The form is defined by the <a class="reference internal" href="models/models.html#trytond.model.ModelView" title="trytond.model.ModelView"><code class="xref py py-class docutils literal notranslate"><span class="pre">ModelView</span></code></a> with the name
+<cite>model_name</cite>, the <cite>XML</cite> id in <cite>view</cite> and the <cite>buttons</cite>.
+The default value of the view can be set with a method on wizard having the
+same name as the state but starting with <cite>default_</cite>.</p>
+</dd></dl>
+
+<p>Instance attributes are:</p>
+<dl class="py attribute">
+<dt id="trytond.wizard.StateView.model_name">
+<code class="descclassname">StateView.</code><code class="descname">model_name</code><a class="headerlink" href="#trytond.wizard.StateView.model_name" title="Permalink to this definition">¶</a></dt>
+<dd><p>The name of the <a class="reference internal" href="models/models.html#trytond.model.ModelView" title="trytond.model.ModelView"><code class="xref py py-class docutils literal notranslate"><span class="pre">ModelView</span></code></a>.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="trytond.wizard.StateView.view">
+<code class="descclassname">StateView.</code><code class="descname">view</code><a class="headerlink" href="#trytond.wizard.StateView.view" title="Permalink to this definition">¶</a></dt>
+<dd><p>The <cite>XML</cite> id of the form view.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="trytond.wizard.StateView.buttons">
+<code class="descclassname">StateView.</code><code class="descname">buttons</code><a class="headerlink" href="#trytond.wizard.StateView.buttons" title="Permalink to this definition">¶</a></dt>
+<dd><p>The list of <a class="reference internal" href="#trytond.wizard.Button" title="trytond.wizard.Button"><code class="xref py py-class docutils literal notranslate"><span class="pre">Button</span></code></a> instances to display on the form.</p>
+</dd></dl>
+
+<p>Instance methods are:</p>
+<dl class="py method">
+<dt id="trytond.wizard.StateView.get_view">
+<code class="descclassname">StateView.</code><code class="descname">get_view</code><span class="sig-paren">(</span><em><span class="n">wizard</span></em>, <em><span class="n">state_name</span></em><span class="sig-paren">)</span><a class="headerlink" href="#trytond.wizard.StateView.get_view" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the view definition like
+<a class="reference internal" href="models/models.html#trytond.model.ModelView.fields_view_get" title="trytond.model.ModelView.fields_view_get"><code class="xref py py-meth docutils literal notranslate"><span class="pre">fields_view_get()</span></code></a>.</p>
+<ul class="simple">
+<li>wizard is a <a class="reference internal" href="#trytond.wizard.Wizard" title="trytond.wizard.Wizard"><code class="xref py py-class docutils literal notranslate"><span class="pre">Wizard</span></code></a> instance</li>
+<li>state_name is the name of the <a class="reference internal" href="#trytond.wizard.StateView" title="trytond.wizard.StateView"><code class="xref py py-class docutils literal notranslate"><span class="pre">StateView</span></code></a> instance</li>
+</ul>
+</dd></dl>
+
+<dl class="py method">
+<dt id="trytond.wizard.StateView.get_defaults">
+<code class="descclassname">StateView.</code><code class="descname">get_defaults</code><span class="sig-paren">(</span><em><span class="n">wizard</span></em>, <em><span class="n">state_name</span></em>, <em><span class="n">fields</span></em><span class="sig-paren">)</span><a class="headerlink" href="#trytond.wizard.StateView.get_defaults" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return default values for the fields.</p>
+<ul class="simple">
+<li>wizard is a <a class="reference internal" href="#trytond.wizard.Wizard" title="trytond.wizard.Wizard"><code class="xref py py-class docutils literal notranslate"><span class="pre">Wizard</span></code></a> instance</li>
+<li>state_name is the name of the <a class="reference internal" href="#trytond.wizard.State" title="trytond.wizard.State"><code class="xref py py-class docutils literal notranslate"><span class="pre">State</span></code></a></li>
+<li>fields is the list of field names</li>
+</ul>
+</dd></dl>
+
+<dl class="py method">
+<dt id="trytond.wizard.StateView.get_buttons">
+<code class="descclassname">StateView.</code><code class="descname">get_buttons</code><span class="sig-paren">(</span><em><span class="n">wizard</span></em>, <em><span class="n">state_name</span></em><span class="sig-paren">)</span><a class="headerlink" href="#trytond.wizard.StateView.get_buttons" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns button definitions of the wizard.</p>
+<ul class="simple">
+<li>wizard is a <a class="reference internal" href="#trytond.wizard.Wizard" title="trytond.wizard.Wizard"><code class="xref py py-class docutils literal notranslate"><span class="pre">Wizard</span></code></a> instance</li>
+<li>state_name is the name of the <a class="reference internal" href="#trytond.wizard.StateView" title="trytond.wizard.StateView"><code class="xref py py-class docutils literal notranslate"><span class="pre">StateView</span></code></a> instance</li>
+</ul>
+</dd></dl>
+
+</div>
+<div class="section" id="statetransition">
+<h1>StateTransition<a class="headerlink" href="#statetransition" title="Permalink to this headline">¶</a></h1>
+<dl class="py class">
+<dt id="trytond.wizard.StateTransition">
+<em class="property">class </em><code class="descclassname">trytond.wizard.</code><code class="descname">StateTransition</code><a class="headerlink" href="#trytond.wizard.StateTransition" title="Permalink to this definition">¶</a></dt>
+<dd><p>A <a class="reference internal" href="#trytond.wizard.StateTransition" title="trytond.wizard.StateTransition"><code class="xref py py-class docutils literal notranslate"><span class="pre">StateTransition</span></code></a> brings the wizard to the <cite>state</cite> returned by the
+method having the same name as the state but starting with <cite>transition_</cite>.</p>
+</dd></dl>
+
+</div>
+<div class="section" id="stateaction">
+<h1>StateAction<a class="headerlink" href="#stateaction" title="Permalink to this headline">¶</a></h1>
+<dl class="py class">
+<dt id="trytond.wizard.StateAction">
+<em class="property">class </em><code class="descclassname">trytond.wizard.</code><code class="descname">StateAction</code><span class="sig-paren">(</span><em><span class="n">action_id</span></em><span class="sig-paren">)</span><a class="headerlink" href="#trytond.wizard.StateAction" title="Permalink to this definition">¶</a></dt>
+<dd><p>A <a class="reference internal" href="#trytond.wizard.StateAction" title="trytond.wizard.StateAction"><code class="xref py py-class docutils literal notranslate"><span class="pre">StateAction</span></code></a> is a <a class="reference internal" href="#trytond.wizard.StateTransition" title="trytond.wizard.StateTransition"><code class="xref py py-class docutils literal notranslate"><span class="pre">StateTransition</span></code></a> which let the client
+launch an <cite>ir.action</cite>. This action definition can be customized with a
+method on wizard having the same name as the state but starting with <cite>do_</cite>.</p>
+</dd></dl>
+
+<p>Instance attributes are:</p>
+<dl class="py attribute">
+<dt id="trytond.wizard.StateAction.action_id">
+<code class="descclassname">StateAction.</code><code class="descname">action_id</code><a class="headerlink" href="#trytond.wizard.StateAction.action_id" title="Permalink to this definition">¶</a></dt>
+<dd><p>The <cite>XML</cite> id of the <cite>ir.action</cite>.</p>
+</dd></dl>
+
+<p>Instance methods are:</p>
+<dl class="py method">
+<dt id="trytond.wizard.StateAction.get_action">
+<code class="descclassname">StateAction.</code><code class="descname">get_action</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#trytond.wizard.StateAction.get_action" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the <cite>ir.action</cite> definition.</p>
+</dd></dl>
+
+</div>
+<div class="section" id="statereport">
+<h1>StateReport<a class="headerlink" href="#statereport" title="Permalink to this headline">¶</a></h1>
+<dl class="py class">
+<dt id="trytond.wizard.StateReport">
+<em class="property">class </em><code class="descclassname">trytond.wizard.</code><code class="descname">StateReport</code><span class="sig-paren">(</span><em><span class="n">report_name</span></em><span class="sig-paren">)</span><a class="headerlink" href="#trytond.wizard.StateReport" title="Permalink to this definition">¶</a></dt>
+<dd><p>A <a class="reference internal" href="#trytond.wizard.StateReport" title="trytond.wizard.StateReport"><code class="xref py py-class docutils literal notranslate"><span class="pre">StateReport</span></code></a> is a <a class="reference internal" href="#trytond.wizard.StateAction" title="trytond.wizard.StateAction"><code class="xref py py-class docutils literal notranslate"><span class="pre">StateAction</span></code></a> which find the report
+action by name instead of <cite>XML</cite> id.</p>
+</dd></dl>
+
+</div>
+<div class="section" id="button">
+<h1>Button<a class="headerlink" href="#button" title="Permalink to this headline">¶</a></h1>
+<dl class="py class">
+<dt id="trytond.wizard.Button">
+<em class="property">class </em><code class="descclassname">trytond.wizard.</code><code class="descname">Button</code><span class="sig-paren">(</span><em>string</em>, <em>state</em><span class="optional">[</span>, <em>icon</em><span class="optional">[</span>, <em>default</em><span class="optional">[</span>, <em>validate</em><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#trytond.wizard.Button" title="Permalink to this definition">¶</a></dt>
+<dd><p>A <a class="reference internal" href="#trytond.wizard.Button" title="trytond.wizard.Button"><code class="xref py py-class docutils literal notranslate"><span class="pre">Button</span></code></a> is a single object containing the definition of a wizard
+button.</p>
+</dd></dl>
+
+<p>Instance attributes are:</p>
+<dl class="py attribute">
+<dt id="trytond.wizard.Button.string">
+<code class="descclassname">Button.</code><code class="descname">string</code><a class="headerlink" href="#trytond.wizard.Button.string" title="Permalink to this definition">¶</a></dt>
+<dd><p>The label display on the button.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="trytond.wizard.Button.state">
+<code class="descclassname">Button.</code><code class="descname">state</code><a class="headerlink" href="#trytond.wizard.Button.state" title="Permalink to this definition">¶</a></dt>
+<dd><p>The next state to reach if button is clicked.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="trytond.wizard.Button.icon">
+<code class="descclassname">Button.</code><code class="descname">icon</code><a class="headerlink" href="#trytond.wizard.Button.icon" title="Permalink to this definition">¶</a></dt>
+<dd><p>The name of the icon to display on the button.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="trytond.wizard.Button.default">
+<code class="descclassname">Button.</code><code class="descname">default</code><a class="headerlink" href="#trytond.wizard.Button.default" title="Permalink to this definition">¶</a></dt>
+<dd><p>A boolean to set it as default on the form.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="trytond.wizard.Button.validate">
+<code class="descclassname">Button.</code><code class="descname">validate</code><a class="headerlink" href="#trytond.wizard.Button.validate" title="Permalink to this definition">¶</a></dt>
+<dd><p>A boolean or None.
+If True, validation of the form will occur, if False it won’t. If the value
+is None the validation will occur only if the state of the button is not the
+wizard ending state.</p>
+</dd></dl>
+
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="pyson.html" class="btn btn-neutral float-right" title="PYSON" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="models/fields.html" class="btn btn-neutral float-left" title="Fields" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020, Ume Abraham Kalu (Test Documentation)
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

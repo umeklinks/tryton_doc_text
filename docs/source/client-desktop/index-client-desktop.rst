@@ -6,8 +6,8 @@ Tryton Desktop Client
 
 Tryton is a Graphical User Interface to Tryton based on GTK_ and Python_.
 
-.. _GTK:  http://www.gtk.org
-.. _Python:  http://www.python.org
+.. _GTK: http://www.gtk.org
+.. _Python: http://www.python.org
 
 
 The **Desktop Client** are the desktop application users or the end users who accesses the application locally. In this documentation, we'll teach you how to set up **Tryton Client** to boost your business. Below is a list of what we'll cover.

@@ -1,0 +1,596 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Account Module &mdash; Tryton Test 0.1 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Account Asset Module" href="modules-account-asset.html" />
+    <link rel="prev" title="Accounting" href="account.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> Tryton Test
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../client-desktop/index-client-desktop.html">Tryton Desktop Client</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../web-client/index-web-client.html">Tryton Web Client</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../server/index-server.html">Tryton Server</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../client-library/index-client-library.html">Tryton Scripting Client</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../index-modules.html">App Modules</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="account.html">Accounting</a><ul class="current">
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Account Module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#fiscal-year">Fiscal Year</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#period">Period</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#account-type">Account Type</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#account">Account</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#journal">Journal</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#reconcile-write-off">Reconcile Write Off</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#move">Move</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#moves-line">Moves Line:</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#tax-code">Tax Code</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#tax">Tax</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#tax-rule">Tax Rule</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#templates">Templates</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#move-template">Move Template</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#move-template-keywords">Move Template Keywords</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#move-line-template">Move Line Template</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#tax-line-template">Tax Line Template</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="modules-account-asset.html">Account Asset Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="modules-account-be.html">Belgian Account Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="modules-account-cash-rounding.html">Account Cash Rounding Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="modules-account-credit-limit.html">Account Credit Limit</a></li>
+<li class="toctree-l3"><a class="reference internal" href="modules-account-deposit.html">Account Deposit Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="modules-account-dunning.html">Account Dunning Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="modules-account-dunning-email.html">Account Dunning Email Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="modules-account-dunning-fee.html">Account Dunning Fee Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="modules-account-dunning-letter.html">Account Dunning Letter Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="modules-account-es.html">Spanish Account Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="modules-account-eu.html">Account Europe Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="modules-account-fr.html">French Account Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="modules-account-fr-chorus.html">Account French Chorus Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="modules-account-de-skr03.html">German Account Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="modules-account-invoice.html">Account Invoice Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="modules-account-invoice-correction.html">Account Invoice Correction Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="modules-account-invoice-history.html">Account Invoice History Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="modules-account-invoice-line-standalone.html">Account Invoice Line Standalone Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="modules-account-invoice-secondary-unit.html">Account Invoice Secondary Unit Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="modules-account-invoice-stock.html">Account Invoice Stock Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="modules-account-payment.html">Account Payment Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="modules-account-payment-clearing.html">Account Payment Clearing Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="modules-account-payment-sepa.html">Account Payment SEPA Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="modules-account-payment-sepa-cfonb.html">Account Payment SEPA CFONB Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="modules-account-payment-stripe.html">Account Payment Stripe Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="modules-account-product.html">Account Product Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="modules-account-statement.html">Account Statement Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="modules-account-statement-aeb43.html">Read the Docs readthedocs.org</a></li>
+<li class="toctree-l3"><a class="reference internal" href="modules-account-statement-coda.html">Account Statement Coda Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="modules-account-statement-ofx.html">Account Statement OFX Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="modules-account-statement-rule.html">Account Statement Rule Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="modules-account-stock-anglo-saxon.html">Account Stock Anglo-Saxon Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="modules-account-stock-continental.html">Account Stock Continental Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="modules-account-stock-landed-cost.html">Account Stock Landed Cost Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="modules-account-stock-landed-cost-weight.html">Account Stock Landed Cost Weight Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="modules-account-tax-cash.html">Account Tax Cash Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="modules-account-tax-rule-country.html">Account Tax Rule Country</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../analytic-accounting/index-analytic-accounting.html">Analytic Accounting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../commission/index-commission.html">Commission</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../edocument/index-edocument.html">Electronic Document</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../marketing/index-marketing.html">Marketing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../production/index-production.html">Production</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../project/index-project.html">Project</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../purchase/index-purchase.html">Purchase</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sale/index-sale.html">Sale</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sale_subscription/index-sale_subscription.html">Sale Subscription</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../stock/index-stock.html">Stock</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../timesheet/index-timesheet.html">Timesheet</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../bank/modules-bank.html">Bank Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../company/index-company.html">Company</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../carrier/index-carrier.html">Carrier</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../country/modules-country.html">Country Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../currency/modules-currency.html">Currency Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../customs/modules-customs.html">Customs Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../dashboard/modules-dashboard.html">Dashboard Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../google-maps/modules-google-maps.html">Google Maps Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../party/index-party.html">Party</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../product/index-product.html">Product</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../authentication/index-authentication.html">Authentication</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../notification-email/modules-notification-email.html">Notification Email Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../user-role/modules-user-role.html">User Role Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../web/index-web.html">Web</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Tryton Test</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../index-modules.html">App Modules</a> &raquo;</li>
+        
+          <li><a href="account.html">Accounting</a> &raquo;</li>
+        
+      <li>Account Module</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../_sources/modules/account/modules-account.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="account-module">
+<span id="module-account"></span><h1>Account Module<a class="headerlink" href="#account-module" title="Permalink to this headline">¶</a></h1>
+<p>The account module defines fundamentals for most of accounting needs.</p>
+<p>The module generates minimal chart of accounts for many languages. The XML
+files for each language are generated from the same original XML file thanks to
+the localize.xsl XSLT script. The script will produce on the standard output
+the desired XML file. The XSLT script can be launched with the following
+command:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">xsltproc</span> <span class="o">--</span><span class="n">stringparam</span> <span class="n">lang</span> <span class="o">&lt;</span><span class="n">lang</span><span class="o">&gt;</span> <span class="n">localize</span><span class="o">.</span><span class="n">xsl</span> <span class="n">minimal_chart</span><span class="o">.</span><span class="n">xml</span>
+</pre></div>
+</div>
+<p>where <code class="docutils literal notranslate"><span class="pre">lang</span></code> is one of the languages.</p>
+<div class="section" id="fiscal-year">
+<h2>Fiscal Year<a class="headerlink" href="#fiscal-year" title="Permalink to this headline">¶</a></h2>
+<p>A fiscal year aggregates a set of periods that are included between
+two dates. A Fiscal year can be <em>Open</em>, <em>Closed</em> or <em>Locked</em>. Closing a fiscal
+year will close all the corresponding periods. A <em>Locked</em> fiscal can not be
+re-open.</p>
+<ul class="simple">
+<li>Name: The name of the fiscal year.</li>
+<li>Code: The code, useful for fast data entry and searching.</li>
+<li>Starting and Ending Date: The dates in which the periods should be
+included.</li>
+<li>Company: The company for which the fiscal year is defined.</li>
+<li>State: Can be <em>Open</em>, <em>Closed</em> or <em>Locked</em>.</li>
+<li>Periods: The list of periods.</li>
+<li>Post Move Sequence: The sequence to use for numbering moves in this
+fiscal year.</li>
+</ul>
+<p>The <em>Balance Non-Deferral</em> wizard allow to create a move that will debit/credit
+each non-deferral account in such way to have a balance equals to zero for the
+fiscal year and debit/credit a counter part account.</p>
+</div>
+<div class="section" id="period">
+<h2>Period<a class="headerlink" href="#period" title="Permalink to this headline">¶</a></h2>
+<p>A period is mainly defined by a Starting and an Ending date, a Fiscal
+Year, a Type and a State (<em>Open</em>, <em>Closed</em> or <em>Locked</em>).</p>
+<p>The type can be <em>Standard</em> or <em>Adjustement</em>: Periods of type
+<em>Standard</em> on the same fiscal year can not overlap. Period of type
+<em>Adjustement</em> can overlap other periods and are typically used for all
+the accounting moves that must be created when closing a fiscal year.
+By default, the system uses only <em>Standard</em> period when creating
+moves.</p>
+<p>Each account move must be linked to a period and a move must be
+created on an open period.</p>
+</div>
+<div class="section" id="account-type">
+<h2>Account Type<a class="headerlink" href="#account-type" title="Permalink to this headline">¶</a></h2>
+<p>The Account Type Model defines the structure of the accounting
+reports as balance sheet and income statement.
+It also defines check boxes to filter its accounts by usage.</p>
+</div>
+<div class="section" id="account">
+<h2>Account<a class="headerlink" href="#account" title="Permalink to this headline">¶</a></h2>
+<p>An Account is defined by these fields:</p>
+<ul class="simple">
+<li>Name</li>
+<li>Code</li>
+<li>Company</li>
+<li>Parent Account</li>
+<li>Currency</li>
+<li>Type: The Account Type of the account.</li>
+<li>Debit Type: The Account Type of the account when debit &gt; credit.</li>
+<li>Start and End Date: The period for which the account can be used.</li>
+<li>Replaced By: the account to use after end date.</li>
+<li>Second currency: Force all moves for the account to have this
+secondary currency.</li>
+<li>Closed: Forbid move on the account.</li>
+<li>Reconcile: Allow move lines of this account to be reconciled.</li>
+<li>Party Required: Make party required for move lines of this account.</li>
+<li>Taxes: This list of tax auto-complete move with new moves lines
+corresponding to thoses taxes if the user create a line linked to
+the current account and if the journal type is <em>Expense</em> or
+<em>Revenue</em>.</li>
+<li>Note</li>
+</ul>
+</div>
+<div class="section" id="journal">
+<h2>Journal<a class="headerlink" href="#journal" title="Permalink to this headline">¶</a></h2>
+<p>A Journal contains the following fields:</p>
+<ul class="simple">
+<li>Name</li>
+<li>Code</li>
+<li>Active: A checkbox that allow to disable the tax.</li>
+<li>Type: By default take one of the following values: <em>General</em>,
+<em>Revenue</em>, <em>Expense</em>, <em>Cash</em>, <em>Situation</em>.</li>
+</ul>
+</div>
+<div class="section" id="reconcile-write-off">
+<h2>Reconcile Write Off<a class="headerlink" href="#reconcile-write-off" title="Permalink to this headline">¶</a></h2>
+<p>A reconcile write off is used to set the writeoff options when reconciling
+unbalanced moves. It has the following fields:</p>
+<ul class="simple">
+<li>Name</li>
+<li>Company</li>
+<li>Journal: Will be used for creating the write off move</li>
+<li>Credit Account and Debit Account: The accounts used for the write off move
+depending on the amount sign.</li>
+<li>Active: A checkbox that allow to disable the writeoff.</li>
+</ul>
+</div>
+<div class="section" id="move">
+<h2>Move<a class="headerlink" href="#move" title="Permalink to this headline">¶</a></h2>
+<p>A Move groups a list of Move Lines. It contains the following fields:</p>
+<ul class="simple">
+<li>Name</li>
+<li>Reference</li>
+<li>Period</li>
+<li>Journal</li>
+<li>Effective Date: The date the move was created.</li>
+<li>Post Date: The date the move was posted.</li>
+<li>State: Can be <em>Draft</em> or <em>Posted</em>. A move should be balanced before
+being posted. Once posted the move gets a Reference number, the
+lines are posted and they can not be edited anymore.</li>
+<li>Lines: The move lines.</li>
+</ul>
+</div>
+<div class="section" id="moves-line">
+<h2>Moves Line:<a class="headerlink" href="#moves-line" title="Permalink to this headline">¶</a></h2>
+<p>A Move Line is an amount of money that is credited to or debited from
+an account. The fields are:</p>
+<ul class="simple">
+<li>Name</li>
+<li>Reference</li>
+<li>Debit and Credit: Define the debited or credited amount. Only one
+field can be filled.</li>
+<li>Account: The account.</li>
+<li>Move: The move that links all the corresponding lines.</li>
+<li>State: Can take one of the following value:<ul>
+<li><em>Draft</em>: The line is part of a non-balanced move.</li>
+<li><em>Valid</em>: The line is part of a balanced move.</li>
+<li><em>Posted</em>: The line is part of a posted move.</li>
+</ul>
+</li>
+<li>Second Currency and Amount Second Currency: allow to keep track of
+the original amount if the underlying transaction was made in an
+other currency.</li>
+<li>Maturity Date: used for payable and receivable lines. The Maturity
+Date is the limit date for the payment.</li>
+<li>Reconciliation: Hold a reconciliation number if applicable.</li>
+<li>Journal, Period, Date: The values on these fields comes from the
+corresponding move.</li>
+<li>Tax Lines. Gives the distribution of the amount line on the account
+chart</li>
+</ul>
+<p>The Move Line is displayed using the account’s name eventualy surrounded by
+parenthesis when it is a credit line.</p>
+<p>The <em>Reconcile Lines</em> wizard allow to link move lines of the same
+acount for whose the credit sum is equal to the debit sum. If the
+selected lines are not balanced, the wizard offer to create a
+write-off line with the difference to make the reconciliation.</p>
+<p>The <em>Unreconcile Lines</em> wizard allow to do the inverse operation (but
+doesn’t reverse other operations that could have triggered by the
+reconciliation).</p>
+<p>The <em>Reconcile Accounts</em> wizard allow to process one by one each party and
+account for reconciliation. The wizard tries to propose the best reconciliation
+possible. The configuration <cite>reconciliation_chunk</cite> in <cite>account</cite> section allow
+to define the length of lines that is allowed to search for proposal. The
+default is 10.</p>
+<p>The <em>Group Lines</em> wizard allow to group payable and/or receivable lines in
+order to have a unique payable or receivable line.</p>
+</div>
+<div class="section" id="tax-code">
+<h2>Tax Code<a class="headerlink" href="#tax-code" title="Permalink to this headline">¶</a></h2>
+<p>The tax codes defines a tree structure and are used to create the tax
+reports. They are used to collect the tax amounts and the base amounts
+of the invoices. The Tax Code model contains the following fields:</p>
+<ul>
+<li><p class="first">Name</p>
+</li>
+<li><p class="first">Code</p>
+</li>
+<li><p class="first">Active: A checkbox that allow to disable the tax code.</p>
+</li>
+<li><p class="first">Company: The company for which the tax code is defined.</p>
+</li>
+<li><p class="first">Parent, Children: Parent and children tax codes.</p>
+</li>
+<li><p class="first">Start and End date: The period for which the tax code is reported.</p>
+</li>
+<li><p class="first">Amount: The sum of lines for the selected periods:</p>
+<blockquote>
+<div><ul class="simple">
+<li>Operator: <cite>+</cite> or <cite>-</cite></li>
+<li>Tax</li>
+<li>Amount: <em>Tax</em> or <em>Base</em></li>
+<li>Type: <em>Invoice</em> or <em>Credit</em></li>
+</ul>
+</div></blockquote>
+</li>
+</ul>
+</div>
+<div class="section" id="tax">
+<h2>Tax<a class="headerlink" href="#tax" title="Permalink to this headline">¶</a></h2>
+<p>The tax model defines taxes, how the tax amount are computed and which
+tax code to use when creating invoices. The Tax model is defined by
+the following fields:</p>
+<ul class="simple">
+<li>Name</li>
+<li>Description</li>
+<li>Group</li>
+<li>Active: A checkbox that allow to disable the tax code.</li>
+<li>Sequence</li>
+<li>Type: May be <em>Percentage</em>, <em>Fixed</em>, or <em>None</em> for empty tax.</li>
+<li>Amount: If Type is <em>Fixed</em>, defines a fix amount for the tax.</li>
+<li>Percentage: If Type is <em>Percentage</em>, defines the percentage of the
+tax.</li>
+<li>Update Unit Price: If checked then the unit price for further tax calculation
+will be increased by the amount of this tax.</li>
+<li>Parent, Children: Parent and children taxes</li>
+<li>Company: The company for which the tax is defined.</li>
+<li>Invoice Account: The account to use when creating move lines for
+invoicing with this tax, for credit on revenue or for debit on
+expense.</li>
+<li>Credit Note Account: The account to use when creating move lines for
+credit notes with this tax, for debit on revenue or for credit on
+expense</li>
+</ul>
+<p>If a code field is left empty, the corresponding amounts will be
+ignored by the tax reports.</p>
+</div>
+<div class="section" id="tax-rule">
+<h2>Tax Rule<a class="headerlink" href="#tax-rule" title="Permalink to this headline">¶</a></h2>
+<p>The tax rule defines a set of rules that will be applied when computing taxes.
+It’s composed by a name, it’s kind and a list of lines. If a tax matches a tax
+rule line, it will be replaced by the <em>Substituion Tax</em>. The <em>Original Tax</em>
+will be included only if the <em>Keep Origin</em> check is checked.</p>
+</div>
+<div class="section" id="templates">
+<h2>Templates<a class="headerlink" href="#templates" title="Permalink to this headline">¶</a></h2>
+<p>The Template models (Account Template, Account Type Template, Tax
+Template, Tax Code Template, etc) are the equivalent of their
+counterparts except that they are not linked to a company. Two wizard
+(<em>Create Chart of Account from Template</em> and <em>Update Chart of Account
+from Template</em>) allow to create and update the accounts from the
+account templates (and consequently all other models associated to
+templates).</p>
+</div>
+<div class="section" id="move-template">
+<h2>Move Template<a class="headerlink" href="#move-template" title="Permalink to this headline">¶</a></h2>
+<p>A move template allows to configure predefined moves. A Move Template is
+defined by the following fields:</p>
+<ul class="simple">
+<li>Name</li>
+<li>Company</li>
+<li>Keywords: The list of keywords used in the template.</li>
+<li>Journal</li>
+<li>Date: The date of the move. It must be leaved empty for today.</li>
+<li>Description: The description of the move. The keyword values can be
+substituted using the name surrounded by braces (‘{‘ and ‘}’).</li>
+<li>Lines: The list of template lines.</li>
+<li>Active</li>
+</ul>
+<p>A wizard to create moved base on templates is available in the <em>Entries</em> menu.
+The templates are also available as actions when opening a journal.</p>
+</div>
+<div class="section" id="move-template-keywords">
+<h2>Move Template Keywords<a class="headerlink" href="#move-template-keywords" title="Permalink to this headline">¶</a></h2>
+<p>The keywords define the values asked to user to create the move based on the
+template. The fields are:</p>
+<ul class="simple">
+<li>Name</li>
+<li>String: The label used in the wizard form.</li>
+<li>Sequence: The sequence used to order the fields in the wizard form.</li>
+<li>Type:<ul>
+<li><em>Char</em></li>
+<li><em>Numeric</em></li>
+<li><em>Date</em></li>
+<li><em>Party</em></li>
+</ul>
+</li>
+<li>Required</li>
+<li>Digits: Only for numeric keyword.</li>
+</ul>
+</div>
+<div class="section" id="move-line-template">
+<h2>Move Line Template<a class="headerlink" href="#move-line-template" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>Operation: <em>Debit</em> or <em>Credit</em></li>
+<li>Amount: An expression that can use any keywords to compute the amount.</li>
+<li>Account</li>
+<li>Party: Only for account that requires a party.</li>
+<li>Description</li>
+<li>Taxes: The list of template tax lines</li>
+</ul>
+</div>
+<div class="section" id="tax-line-template">
+<h2>Tax Line Template<a class="headerlink" href="#tax-line-template" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>Amount: An expression that can use any keywords to compute the amount.</li>
+<li>Code: The tax code to use.</li>
+<li>Tax</li>
+</ul>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="modules-account-asset.html" class="btn btn-neutral float-right" title="Account Asset Module" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="account.html" class="btn btn-neutral float-left" title="Accounting" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020, Ume Abraham Kalu (Test Documentation)
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

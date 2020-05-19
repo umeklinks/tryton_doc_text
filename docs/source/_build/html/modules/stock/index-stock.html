@@ -1,0 +1,334 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Stock &mdash; Tryton Test 0.1 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Stock Module" href="modules-stock.html" />
+    <link rel="prev" title="Sale Subscription Asset Module" href="../sale_subscription/modules-sale-subscription-asset.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> Tryton Test
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../client-desktop/index-client-desktop.html">Tryton Desktop Client</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../web-client/index-web-client.html">Tryton Web Client</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../server/index-server.html">Tryton Server</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../client-library/index-client-library.html">Tryton Scripting Client</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../index-modules.html">App Modules</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../account/account.html">Accounting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../analytic-accounting/index-analytic-accounting.html">Analytic Accounting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../commission/index-commission.html">Commission</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../edocument/index-edocument.html">Electronic Document</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../marketing/index-marketing.html">Marketing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../production/index-production.html">Production</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../project/index-project.html">Project</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../purchase/index-purchase.html">Purchase</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sale/index-sale.html">Sale</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sale_subscription/index-sale_subscription.html">Sale Subscription</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Stock</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="modules-stock.html">Stock Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="modules-stock-consignment.html">Stock Consignment Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="modules-stock-forecast.html">Stock Forecast Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="modules-stock-inventory-location.html">Stock Inventory Location Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="modules-stock-location-move.html">Stock Location Move Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="modules-stock-location-sequence.html">Stock Location Sequence Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="modules-stock-lot.html">Stock Lot Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="modules-stock-lot-sled.html">Stock Lot Shelf Life Expiration Date</a></li>
+<li class="toctree-l3"><a class="reference internal" href="modules-stock-lot-unit.html">Stock Lot Unit Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="modules-stock-package.html">Stock Package Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="modules-stock-package-shipping.html">Stock Package Shipping Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="modules-stock-package-shipping-dpd.html">Stock Package Shipping DPD Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="modules-stock-package-shipping-ups.html">Stock Package Shipping UPS Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="modules-stock-product-location.html">Stock Product Location Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="modules-stock-secondary-unit.html">Stock Secondary Unit Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="modules-stock-shipment-measurements.html">Stock Shipment Measurements Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="modules-stock-split.html">Stock Split Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="modules-stock-supply.html">Stock Supply Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="modules-stock-supply-forecast.html">Stock Supply Forecast Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="modules-stock-supply-day.html">Stock Supply Day Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="modules-stock-supply-production.html">Stock Supply Production Module</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../timesheet/index-timesheet.html">Timesheet</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../bank/modules-bank.html">Bank Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../company/index-company.html">Company</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../carrier/index-carrier.html">Carrier</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../country/modules-country.html">Country Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../currency/modules-currency.html">Currency Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../customs/modules-customs.html">Customs Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../dashboard/modules-dashboard.html">Dashboard Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../google-maps/modules-google-maps.html">Google Maps Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../party/index-party.html">Party</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../product/index-product.html">Product</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../authentication/index-authentication.html">Authentication</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../notification-email/modules-notification-email.html">Notification Email Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../user-role/modules-user-role.html">User Role Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../web/index-web.html">Web</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Tryton Test</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../index-modules.html">App Modules</a> &raquo;</li>
+        
+      <li>Stock</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../_sources/modules/stock/index-stock.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="stock">
+<span id="index-stock"></span><h1>Stock<a class="headerlink" href="#stock" title="Permalink to this headline">¶</a></h1>
+<dl class="glossary docutils">
+</dl>
+<p><a class="reference internal" href="modules-stock.html#modules-stock"><span class="std std-ref">Stock</span></a></p>
+<blockquote>
+<div>Fundamentals to manage warehouses.</div></blockquote>
+<p><a class="reference internal" href="modules-stock-consignment.html#modules-stock-consignment"><span class="std std-ref">Consignemt</span></a></p>
+<blockquote>
+<div>Manages consignment stock from supplier or at customer warehouse.</div></blockquote>
+<p><a class="reference internal" href="modules-stock-forecast.html#modules-stock-forecast"><span class="std std-ref">Forecast</span></a></p>
+<blockquote>
+<div>Forecast the stock levels.</div></blockquote>
+<p><a class="reference internal" href="modules-stock-inventory-location.html#modules-stock-inventory-location"><span class="std std-ref">Inventory Location</span></a></p>
+<blockquote>
+<div>Creates inventories for many locations.</div></blockquote>
+<p><a class="reference internal" href="modules-stock-location-move.html#modules-stock-location-move"><span class="std std-ref">Location Move</span></a></p>
+<blockquote>
+<div>Makes location movable.</div></blockquote>
+<p><a class="reference internal" href="modules-stock-location-sequence.html#modules-stock-location-sequence"><span class="std std-ref">Location Sequence</span></a></p>
+<blockquote>
+<div>Orders locations.</div></blockquote>
+<p><a class="reference internal" href="modules-stock-lot.html#modules-stock-lot"><span class="std std-ref">Lot</span></a></p>
+<blockquote>
+<div>Track products with lot.</div></blockquote>
+<p><a class="reference internal" href="modules-stock-lot-sled.html#modules-stock-lot-sled"><span class="std std-ref">Lot Shelf Life Expiration Date</span></a></p>
+<blockquote>
+<div>Manages expiration dates.</div></blockquote>
+<p><a class="reference internal" href="modules-stock-lot-unit.html#modules-stock-lot-unit"><span class="std std-ref">Lot Unit</span></a></p>
+<blockquote>
+<div>Defines unit and quantity per lot.</div></blockquote>
+<p><a class="reference internal" href="modules-stock-package.html#modules-stock-package"><span class="std std-ref">Package</span></a></p>
+<blockquote>
+<div>Store packaging on shipments.</div></blockquote>
+<p><a class="reference internal" href="modules-stock-package-shipping.html#modules-stock-package-shipping"><span class="std std-ref">Package Shipping</span></a></p>
+<blockquote>
+<div>Fundamentals to interact with shipping services.</div></blockquote>
+<p><a class="reference internal" href="modules-stock-package-shipping-dpd.html#modules-stock-package-shipping-dpd"><span class="std std-ref">Package Shipping DPD</span></a></p>
+<blockquote>
+<div>Connects with DPD shipping service.</div></blockquote>
+<p><a class="reference internal" href="modules-stock-package-shipping-ups.html#modules-stock-package-shipping-ups"><span class="std std-ref">Package Shipping UPS</span></a></p>
+<blockquote>
+<div>Connects with UPS shipping service.</div></blockquote>
+<p><a class="reference internal" href="modules-stock-product-location.html#modules-stock-product-location"><span class="std std-ref">Product Location</span></a></p>
+<blockquote>
+<div>Defines preferred locations for products.</div></blockquote>
+<p><a class="reference internal" href="modules-stock-secondary-unit.html#modules-stock-secondary-unit"><span class="std std-ref">Secondary Unit</span></a></p>
+<blockquote>
+<div>Adds a secondary unit of measure.</div></blockquote>
+<p><a class="reference internal" href="modules-stock-shipment-measurements.html#modules-stock-shipment-measurements"><span class="std std-ref">Shipment Measurements</span></a></p>
+<blockquote>
+<div>Adds measurements to shipments.</div></blockquote>
+<p><a class="reference internal" href="modules-stock-split.html#modules-stock-split"><span class="std std-ref">Split</span></a></p>
+<blockquote>
+<div>Splits moves and shipments.</div></blockquote>
+<p><a class="reference internal" href="modules-stock-supply.html#modules-stock-supply"><span class="std std-ref">Supply</span></a></p>
+<blockquote>
+<div>Supplies warehouses.</div></blockquote>
+<p><a class="reference internal" href="modules-stock-supply-forecast.html#modules-stock-supply-forecast"><span class="std std-ref">Supply Forecast</span></a></p>
+<blockquote>
+<div>Uses forecast to supply warehouses.</div></blockquote>
+<p><a class="reference internal" href="modules-stock-supply-day.html#modules-stock-supply-day"><span class="std std-ref">Supply Day</span></a></p>
+<blockquote>
+<div>Compute supply date per week day.</div></blockquote>
+<p><a class="reference internal" href="modules-stock-supply-production.html#modules-stock-supply-production"><span class="std std-ref">Supply Production</span></a></p>
+<blockquote>
+<div>Supplies warehouses with production orders.</div></blockquote>
+<div class="toctree-wrapper compound">
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="modules-stock.html" class="btn btn-neutral float-right" title="Stock Module" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="../sale_subscription/modules-sale-subscription-asset.html" class="btn btn-neutral float-left" title="Sale Subscription Asset Module" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020, Ume Abraham Kalu (Test Documentation)
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

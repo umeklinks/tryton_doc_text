@@ -1,0 +1,345 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>PYSON &mdash; Tryton Test 0.1 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Access Rights" href="access_rights.html" />
+    <link rel="prev" title="Domain" href="domain.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> Tryton Test
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../client-desktop/index-client-desktop.html">Tryton Desktop Client</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../web-client/index-web-client.html">Tryton Web Client</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../index-server.html">Tryton Server</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../index-server.html#first-steps">First steps</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index-server.html#the-model-layer">The model layer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index-server.html#the-view-layer">The view layer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index-server.html#the-development-process">The development process</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../index-server.html#contents">Contents</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="index-topics.html">Using trytond</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="install.html">How to install Tryton</a></li>
+<li class="toctree-l4"><a class="reference internal" href="configuration.html">Configuration file for Tryton</a></li>
+<li class="toctree-l4"><a class="reference internal" href="setup_database.html">How to setup a database</a></li>
+<li class="toctree-l4"><a class="reference internal" href="logs.html">Logging configuration</a></li>
+<li class="toctree-l4"><a class="reference internal" href="start_server.html">How to start the server</a></li>
+<li class="toctree-l4"><a class="reference internal" href="models/index-topics-models.html">Models</a></li>
+<li class="toctree-l4"><a class="reference internal" href="backend_types.html">Backend Types supported</a></li>
+<li class="toctree-l4"><a class="reference internal" href="models/fields_default_value.html">Default value of fields</a></li>
+<li class="toctree-l4"><a class="reference internal" href="models/fields_on_change.html">on_change of fields</a></li>
+<li class="toctree-l4"><a class="reference internal" href="domain.html">Domain</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">PYSON</a></li>
+<li class="toctree-l4"><a class="reference internal" href="access_rights.html">Access Rights</a></li>
+<li class="toctree-l4"><a class="reference internal" href="user_errors_warnings.html">User Errors and Warnings</a></li>
+<li class="toctree-l4"><a class="reference internal" href="triggers.html">Triggers</a></li>
+<li class="toctree-l4"><a class="reference internal" href="actions.html">Actions</a></li>
+<li class="toctree-l4"><a class="reference internal" href="views/index-topics-views.html">Views</a></li>
+<li class="toctree-l4"><a class="reference internal" href="views/extension.html">Extending View</a></li>
+<li class="toctree-l4"><a class="reference internal" href="wizard.html">Wizard</a></li>
+<li class="toctree-l4"><a class="reference internal" href="reports/index-topics-reports.html">Reports</a></li>
+<li class="toctree-l4"><a class="reference internal" href="rpc.html">Remote Procedure Call</a></li>
+<li class="toctree-l4"><a class="reference internal" href="task_queue.html">Task Queue</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cron.html">Scheduled Actions</a></li>
+<li class="toctree-l4"><a class="reference internal" href="user_application.html">User Application</a></li>
+<li class="toctree-l4"><a class="reference internal" href="bus.html">Sending notifications</a></li>
+<li class="toctree-l4"><a class="reference internal" href="modules/index-topics-modules.html">Modules</a></li>
+<li class="toctree-l4"><a class="reference internal" href="translation.html">Translation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="testing.html">Testing</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../ref/ref-index.html">API Reference</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../index-server.html#indices-glossary-and-tables">Indices, glossary and tables</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../client-library/index-client-library.html">Tryton Scripting Client</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../modules/index-modules.html">App Modules</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Tryton Test</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../index-server.html">Tryton Server</a> &raquo;</li>
+        
+          <li><a href="index-topics.html">Using trytond</a> &raquo;</li>
+        
+      <li>PYSON</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../_sources/server/topics/pyson.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="pyson">
+<span id="topics-pyson"></span><h1>PYSON<a class="headerlink" href="#pyson" title="Permalink to this headline">¶</a></h1>
+<p>PYSON is the PYthon Statement and Object Notation. It is a
+lightweight <a class="reference external" href="http://en.wikipedia.org/wiki/Domain-specific_language" target="_blank">domain specific language</a> for the general representation
+of statements. PYSON is used to encode statements which can be
+evaluated in different programming languages, serving for the
+communication between trytond and any third party software.
+A PYSON parser can easily be implemented in other programming languages.
+So third party softwares do not need to depend on Python to be able to
+fully communicate with the Tryton server.</p>
+<p>PYSON is a <a class="reference external" href="http://en.wikipedia.org/wiki/Deterministic_algorithm" target="_blank">deterministic algorithm</a> which will always succeed to evaluate
+statements. There is a default behavior for unknown values. It is statically
+typed and checked on instantiation.</p>
+<p>There is also a <a class="reference internal" href="../ref/pyson.html#ref-pyson"><span class="std std-ref">reference documentation of the API</span></a>.</p>
+<div class="section" id="syntax">
+<h2>Syntax<a class="headerlink" href="#syntax" title="Permalink to this headline">¶</a></h2>
+<p>The syntax of a PYSON statement follows this pattern:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Statement</span><span class="p">(</span><span class="n">argument1</span><span class="p">[,</span> <span class="n">argument2</span><span class="p">[,</span> <span class="o">...</span><span class="p">]])</span>
+</pre></div>
+</div>
+<p>where arguments can be another statement or a value. The evaluation
+direction is inside out, deepest first.</p>
+</div>
+<div class="section" id="pyson-examples">
+<h2>PYSON Examples<a class="headerlink" href="#pyson-examples" title="Permalink to this headline">¶</a></h2>
+<p>Given the PYSON statement:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Eval</span><span class="p">(</span><span class="s1">&#39;active_id&#39;</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">Eval()</span></code> checks the evaluation context for the variable <code class="docutils literal notranslate"><span class="pre">active_id</span></code>
+and returns its value or <code class="docutils literal notranslate"><span class="pre">-1</span></code> if not defined. A similar expression
+in Python looks like this:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="s1">&#39;active_id&#39;</span> <span class="ow">in</span> <span class="nb">locals</span><span class="p">()</span> <span class="ow">and</span> <span class="n">active_id</span> <span class="ow">or</span> <span class="o">-</span><span class="mi">1</span>
+</pre></div>
+</div>
+<p>Given the PYSON statement:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Not</span><span class="p">(</span><span class="n">Bool</span><span class="p">(</span><span class="n">Eval</span><span class="p">(</span><span class="s1">&#39;active&#39;</span><span class="p">)))</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">Eval()</span></code> checks the evaluation context for a variable <code class="docutils literal notranslate"><span class="pre">active</span></code> and
+returns its value to <code class="docutils literal notranslate"><span class="pre">Bool()</span></code> or <code class="docutils literal notranslate"><span class="pre">''</span></code> if not defined. <code class="docutils literal notranslate"><span class="pre">Bool()</span></code>
+returns the corresponding boolean value of the former result to <code class="docutils literal notranslate"><span class="pre">Not()</span></code>.
+<code class="docutils literal notranslate"><span class="pre">Not()</span></code> returns the boolean negation of the previous result. A similar
+expression in Python looks like this:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="s1">&#39;active&#39;</span> <span class="ow">in</span> <span class="nb">locals</span><span class="p">()</span> <span class="ow">and</span> <span class="n">active</span> <span class="o">==</span> <span class="kc">False</span>
+</pre></div>
+</div>
+<p>Given the PYSON statement:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Or</span><span class="p">(</span><span class="n">Not</span><span class="p">(</span><span class="n">Equal</span><span class="p">(</span><span class="n">Eval</span><span class="p">(</span><span class="s1">&#39;state&#39;</span><span class="p">),</span> <span class="s1">&#39;draft&#39;</span><span class="p">)),</span> <span class="n">Bool</span><span class="p">(</span><span class="n">Eval</span><span class="p">(</span><span class="s1">&#39;lines&#39;</span><span class="p">)))</span>
+</pre></div>
+</div>
+<p>In this example are the results of two partial expressions
+<code class="docutils literal notranslate"><span class="pre">Not(Equal(Eval('state'),</span> <span class="pre">'draft'))</span></code> and <code class="docutils literal notranslate"><span class="pre">Bool(Eval('lines'))</span></code>
+evaluated by a logical <em>OR</em> operator. The first expression part is
+evaluated as follow: When the value of <code class="docutils literal notranslate"><span class="pre">Eval('state')</span></code> is equal to
+the string <code class="docutils literal notranslate"><span class="pre">'draft'</span></code> then return true, else false. <code class="docutils literal notranslate"><span class="pre">Not()</span></code> negates
+the former result. A similar expression in Python looks like this:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="s1">&#39;states&#39;</span> <span class="ow">in</span> <span class="nb">locals</span><span class="p">()</span> <span class="ow">and</span> <span class="s1">&#39;lines&#39;</span> <span class="ow">in</span> <span class="nb">locals</span><span class="p">()</span> \
+        <span class="ow">and</span> <span class="n">state</span> <span class="o">!=</span> <span class="s1">&#39;draft&#39;</span> <span class="ow">or</span> <span class="nb">bool</span><span class="p">(</span><span class="n">lines</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Given the PYSON statement:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">If</span><span class="p">(</span><span class="n">In</span><span class="p">(</span><span class="s1">&#39;company&#39;</span><span class="p">,</span> <span class="n">Eval</span><span class="p">(</span><span class="s1">&#39;context&#39;</span><span class="p">,</span> <span class="p">{})),</span> <span class="s1">&#39;=&#39;</span><span class="p">,</span> <span class="s1">&#39;!=&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>In this example the result is determined by an <a class="reference external" href="http://en.wikipedia.org/wiki/Conditional_statement#If-Then.28-Else.29" target="_blank">if-then-else</a> condition.
+<code class="docutils literal notranslate"><span class="pre">In('company',</span> <span class="pre">Eval('context',</span> <span class="pre">{}))</span></code> is evaluated like this: When
+the key <code class="docutils literal notranslate"><span class="pre">'company'</span></code> is in the dictionary <code class="docutils literal notranslate"><span class="pre">context</span></code>, returns
+true, otherwise false. <code class="docutils literal notranslate"><span class="pre">If()</span></code> evaluates the former result and returns
+the string <code class="docutils literal notranslate"><span class="pre">'='</span></code> if the result is true, otherwise returns the
+string <code class="docutils literal notranslate"><span class="pre">'!='</span></code>. A similar expression in Python looks like this:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="s1">&#39;context&#39;</span> <span class="ow">in</span> <span class="nb">locals</span><span class="p">()</span> <span class="ow">and</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">context</span><span class="p">,</span> <span class="nb">dict</span><span class="p">)</span> \
+        <span class="ow">and</span> <span class="s1">&#39;company&#39;</span> <span class="ow">in</span> <span class="n">context</span> <span class="ow">and</span> <span class="s1">&#39;=&#39;</span> <span class="ow">or</span> <span class="s1">&#39;!=&#39;</span>
+</pre></div>
+</div>
+<p>Given the PYSON statement:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Get</span><span class="p">(</span><span class="n">Eval</span><span class="p">(</span><span class="s1">&#39;context&#39;</span><span class="p">,</span> <span class="p">{}),</span> <span class="s1">&#39;company&#39;</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">Eval()</span></code> checks the evaluation context for a variable <code class="docutils literal notranslate"><span class="pre">context</span></code> if
+defined, return the variable <code class="docutils literal notranslate"><span class="pre">context</span></code>, otherwise return an empty
+dictionary <code class="docutils literal notranslate"><span class="pre">{}</span></code>. <code class="docutils literal notranslate"><span class="pre">Get()</span></code> checks the former resulting dictionary
+and returns the value of the key <code class="docutils literal notranslate"><span class="pre">'company'</span></code>, otherwise it returns
+the number <code class="docutils literal notranslate"><span class="pre">0</span></code>. A similar expression in Python looks like this:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="s1">&#39;context&#39;</span> <span class="ow">in</span> <span class="nb">locals</span><span class="p">()</span> <span class="ow">and</span> <span class="n">context</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;company&#39;</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span> <span class="ow">or</span> <span class="mi">0</span>
+</pre></div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="access_rights.html" class="btn btn-neutral float-right" title="Access Rights" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="domain.html" class="btn btn-neutral float-left" title="Domain" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020, Ume Abraham Kalu (Test Documentation)
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

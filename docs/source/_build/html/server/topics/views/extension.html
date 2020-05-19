@@ -1,0 +1,302 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Extending View &mdash; Tryton Test 0.1 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../../../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+        <script src="../../../_static/jquery.js"></script>
+        <script src="../../../_static/underscore.js"></script>
+        <script src="../../../_static/doctools.js"></script>
+        <script src="../../../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="Wizard" href="../wizard.html" />
+    <link rel="prev" title="Views" href="index-topics-views.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../../index.html" class="icon icon-home"> Tryton Test
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../client-desktop/index-client-desktop.html">Tryton Desktop Client</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../web-client/index-web-client.html">Tryton Web Client</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../../index-server.html">Tryton Server</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../index-server.html#first-steps">First steps</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../index-server.html#the-model-layer">The model layer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../index-server.html#the-view-layer">The view layer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../index-server.html#the-development-process">The development process</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../../index-server.html#contents">Contents</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="../index-topics.html">Using trytond</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="../install.html">How to install Tryton</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../configuration.html">Configuration file for Tryton</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../setup_database.html">How to setup a database</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../logs.html">Logging configuration</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../start_server.html">How to start the server</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../models/index-topics-models.html">Models</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../backend_types.html">Backend Types supported</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../models/fields_default_value.html">Default value of fields</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../models/fields_on_change.html">on_change of fields</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../domain.html">Domain</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../pyson.html">PYSON</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../access_rights.html">Access Rights</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../user_errors_warnings.html">User Errors and Warnings</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../triggers.html">Triggers</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../actions.html">Actions</a></li>
+<li class="toctree-l4 current"><a class="reference internal" href="index-topics-views.html">Views</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">Extending View</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../wizard.html">Wizard</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../reports/index-topics-reports.html">Reports</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../rpc.html">Remote Procedure Call</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../task_queue.html">Task Queue</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../cron.html">Scheduled Actions</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../user_application.html">User Application</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../bus.html">Sending notifications</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../modules/index-topics-modules.html">Modules</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../translation.html">Translation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../testing.html">Testing</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../ref/ref-index.html">API Reference</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../index-server.html#indices-glossary-and-tables">Indices, glossary and tables</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../client-library/index-client-library.html">Tryton Scripting Client</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../modules/index-modules.html">App Modules</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">Tryton Test</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../../index-server.html">Tryton Server</a> &raquo;</li>
+        
+          <li><a href="../index-topics.html">Using trytond</a> &raquo;</li>
+        
+          <li><a href="index-topics-views.html">Views</a> &raquo;</li>
+        
+      <li>Extending View</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../../_sources/server/topics/views/extension.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="extending-view">
+<span id="topics-extension"></span><h1>Extending View<a class="headerlink" href="#extending-view" title="Permalink to this headline">¶</a></h1>
+<p>Extending a view means, that the original view will be modified by a set of
+rules which are defined with XML.</p>
+<p>For this purpose, the extension engine uses xpath expressions.</p>
+<p>The view is defined with the field <code class="docutils literal notranslate"><span class="pre">inherit</span></code> of the ir.ui.view.</p>
+<p>If the field <code class="docutils literal notranslate"><span class="pre">domain</span></code> (a Python string representation of a <a class="reference internal" href="../domain.html#topics-domain"><span class="std std-ref">domain</span></a>) is not set or evaluated to True, the inheritance will be
+proceeded.</p>
+<div class="section" id="xml-description">
+<h2>XML Description<a class="headerlink" href="#xml-description" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="data">
+<h3>data<a class="headerlink" href="#data" title="Permalink to this headline">¶</a></h3>
+<p>Each view must start with this tag.</p>
+</div>
+<div class="section" id="xpath">
+<h3>xpath<a class="headerlink" href="#xpath" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><ul class="simple">
+<li><code class="docutils literal notranslate"><span class="pre">expr</span></code>: the xpath expression to find a node in the inherited view.</li>
+<li><code class="docutils literal notranslate"><span class="pre">position</span></code>: Define the position in relation to the node found. It can
+be <code class="docutils literal notranslate"><span class="pre">before</span></code>, <code class="docutils literal notranslate"><span class="pre">after</span></code>, <code class="docutils literal notranslate"><span class="pre">replace</span></code>, <code class="docutils literal notranslate"><span class="pre">inside</span></code> or
+<code class="docutils literal notranslate"><span class="pre">replace_attributes</span></code> which will change the attributes.</li>
+</ul>
+</div></blockquote>
+</div>
+</div>
+<div class="section" id="example">
+<h2>Example<a class="headerlink" href="#example" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;data&gt;</span>
+    <span class="nt">&lt;xpath</span>
+        <span class="na">expr=</span><span class="s">&quot;/form/notebook/page/separator[@name=&amp;quot;signature&amp;quot;]&quot;</span>
+        <span class="na">position=</span><span class="s">&quot;before&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;label</span> <span class="na">name=</span><span class="s">&quot;main_company&quot;</span><span class="nt">/&gt;</span>
+        <span class="nt">&lt;field</span> <span class="na">name=</span><span class="s">&quot;main_company&quot;</span><span class="nt">/&gt;</span>
+        <span class="nt">&lt;label</span> <span class="na">name=</span><span class="s">&quot;company&quot;</span><span class="nt">/&gt;</span>
+        <span class="nt">&lt;field</span> <span class="na">name=</span><span class="s">&quot;company&quot;</span><span class="nt">/&gt;</span>
+        <span class="nt">&lt;label</span> <span class="na">name=</span><span class="s">&quot;employee&quot;</span><span class="nt">/&gt;</span>
+        <span class="nt">&lt;field</span> <span class="na">name=</span><span class="s">&quot;employee&quot;</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;/xpath&gt;</span>
+<span class="nt">&lt;/data&gt;</span>
+</pre></div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../wizard.html" class="btn btn-neutral float-right" title="Wizard" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="index-topics-views.html" class="btn btn-neutral float-left" title="Views" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020, Ume Abraham Kalu (Test Documentation)
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

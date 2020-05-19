@@ -1,0 +1,345 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Bus &mdash; Tryton Test 0.1 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Test" href="tests.html" />
+    <link rel="prev" title="Cache" href="cache.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> Tryton Test
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../client-desktop/index-client-desktop.html">Tryton Desktop Client</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../web-client/index-web-client.html">Tryton Web Client</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../index-server.html">Tryton Server</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../index-server.html#first-steps">First steps</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index-server.html#the-model-layer">The model layer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index-server.html#the-view-layer">The view layer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index-server.html#the-development-process">The development process</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../index-server.html#contents">Contents</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../topics/index-topics.html">Using trytond</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="ref-index.html">API Reference</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="models/ref-models-index.html">Models</a></li>
+<li class="toctree-l4"><a class="reference internal" href="wizard.html">Wizard</a></li>
+<li class="toctree-l4"><a class="reference internal" href="wizard.html#state">State</a></li>
+<li class="toctree-l4"><a class="reference internal" href="wizard.html#stateview">StateView</a></li>
+<li class="toctree-l4"><a class="reference internal" href="wizard.html#statetransition">StateTransition</a></li>
+<li class="toctree-l4"><a class="reference internal" href="wizard.html#stateaction">StateAction</a></li>
+<li class="toctree-l4"><a class="reference internal" href="wizard.html#statereport">StateReport</a></li>
+<li class="toctree-l4"><a class="reference internal" href="wizard.html#button">Button</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyson.html">PYSON</a></li>
+<li class="toctree-l4"><a class="reference internal" href="transaction.html">Transaction</a></li>
+<li class="toctree-l4"><a class="reference internal" href="exceptions.html">Exceptions</a></li>
+<li class="toctree-l4"><a class="reference internal" href="tools/ref-tools-index.html">Tools</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pool.html">Pool</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pool.html#poolmeta">PoolMeta</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pool.html#poolbase">PoolBase</a></li>
+<li class="toctree-l4"><a class="reference internal" href="rpc.html">RPC</a></li>
+<li class="toctree-l4"><a class="reference internal" href="rpc.html#rpccache">RPCCache</a></li>
+<li class="toctree-l4"><a class="reference internal" href="i18n.html">Internationalization</a></li>
+<li class="toctree-l4"><a class="reference internal" href="sendmail.html">Sendmail</a></li>
+<li class="toctree-l4"><a class="reference internal" href="filestore.html">FileStore</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cache.html">Cache</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">Bus</a></li>
+<li class="toctree-l4"><a class="reference internal" href="tests.html">Test</a></li>
+<li class="toctree-l4"><a class="reference internal" href="tests.html#moduletestcase">ModuleTestCase</a></li>
+<li class="toctree-l4"><a class="reference internal" href="tests.html#helpers">Helpers</a></li>
+<li class="toctree-l4"><a class="reference internal" href="tests.html#tests-tools">Tests tools</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../index-server.html#indices-glossary-and-tables">Indices, glossary and tables</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../client-library/index-client-library.html">Tryton Scripting Client</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../modules/index-modules.html">App Modules</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Tryton Test</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../index-server.html">Tryton Server</a> &raquo;</li>
+        
+          <li><a href="ref-index.html">API Reference</a> &raquo;</li>
+        
+      <li>Bus</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../_sources/server/ref/bus.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <span class="target" id="module-trytond.bus"><span id="ref-bus"></span></span><div class="section" id="bus">
+<h1>Bus<a class="headerlink" href="#bus" title="Permalink to this headline">¶</a></h1>
+<dl class="py class">
+<dt id="trytond.bus.Bus">
+<em class="property">class </em><code class="descclassname">trytond.bus.</code><code class="descname">Bus</code><a class="headerlink" href="#trytond.bus.Bus" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<p>The Tryton server listens on <cite>POST</cite> requests on the routes matching
+<cite>/&lt;database_name&gt;/bus</cite> and replies with JSON dictionary containing:</p>
+<dl class="docutils">
+<dt>channel</dt><dd>The channel on which this message has been received.</dd>
+<dt>message</dt><dd><p>A dictionary that is the message the client must handle. The specification
+of the message depends of its type.</p>
+<p>All messages should at least content a unique identifier in the key
+<cite>message_id</cite> and their type in the key of the same name.</p>
+</dd>
+</dl>
+<p>Client sending their request on the route must be authenticated. The request
+must submit a JSON dictionary containing:</p>
+<dl class="docutils">
+<dt>last_message</dt><dd>A value identifying the last message received by the client. This value
+can be <cite>null</cite>.</dd>
+<dt>channels</dt><dd>A list of strings denoting the channels the client is listening to.</dd>
+</dl>
+<p>The :class:Bus exposes two methods that are used by the framework: <cite>publish</cite>
+and <cite>subscribe</cite>.</p>
+<dl class="py method">
+<dt id="trytond.bus.Bus.publish">
+<em class="property">classmethod </em><code class="descclassname">Bus.</code><code class="descname">publish</code><span class="sig-paren">(</span><em><span class="n">channel</span></em>, <em><span class="n">message</span></em><span class="sig-paren">)</span><a class="headerlink" href="#trytond.bus.Bus.publish" title="Permalink to this definition">¶</a></dt>
+<dd><p>Send a message to a specific channel.</p>
+<p>Currently implemented messages are:</p>
+<blockquote>
+<div><ul class="simple">
+<li><a class="reference internal" href="#bus-notification-spec"><span class="std std-ref">Notifications</span></a></li>
+</ul>
+</div></blockquote>
+</dd></dl>
+
+<dl class="py method">
+<dt id="trytond.bus.Bus.subscribe">
+<em class="property">classmethod </em><code class="descclassname">Bus.</code><code class="descname">subscribe</code><span class="sig-paren">(</span><em>database</em>, <em>channels</em><span class="optional">[</span>, <em>last_message</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#trytond.bus.Bus.subscribe" title="Permalink to this definition">¶</a></dt>
+<dd><p>Subscribe a user client to some <cite>channels</cite> of messages.</p>
+<p>The <cite>message_id</cite> parameter defines the last message ID received by the
+client. It defaults to None when not provided.</p>
+</dd></dl>
+
+<p>The default implementation provides an helper method to construct the response:</p>
+<dl class="py method">
+<dt id="trytond.bus.Bus.create_response">
+<em class="property">classmethod </em><code class="descclassname">Bus.</code><code class="descname">create_response</code><span class="sig-paren">(</span><em><span class="n">channel</span></em>, <em><span class="n">message</span></em><span class="sig-paren">)</span><a class="headerlink" href="#trytond.bus.Bus.create_response" title="Permalink to this definition">¶</a></dt>
+<dd><p>Creates a dictionary suitable as a response from a message and a timestamp.</p>
+<p><cite>channel</cite> is the channel on which the message has been received.</p>
+<p><cite>message</cite> is the content of the message sent to the client.</p>
+</dd></dl>
+
+<p>Please note that the implementation relies on the fact that the order of the
+messages received is consistent accros different trytond instances allowing to
+dispatch the request to any trytond server running.</p>
+<div class="section" id="notification">
+<h2>Notification<a class="headerlink" href="#notification" title="Permalink to this headline">¶</a></h2>
+<p>Tryton provides a shortcut to send a notification with the <cite>notify</cite> method.</p>
+<dl class="py method">
+<dt id="trytond.bus.notify">
+<code class="descclassname">trytond.bus.</code><code class="descname">notify</code><span class="sig-paren">(</span><em>title</em><span class="optional">[</span>, <em>body</em><span class="optional">[</span>, <em>priority</em><span class="optional">[</span>, <em>user</em><span class="optional">[</span>, <em>client</em><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#trytond.bus.notify" title="Permalink to this definition">¶</a></dt>
+<dd><p>Send a text message to a user’s client to be displayed using a
+notification popup. The meaning of <cite>title</cite>, <cite>body</cite> and <cite>priority</cite> is
+defined in <a class="reference internal" href="#bus-notification-spec"><span class="std std-ref">Notification message</span></a>.</p>
+<p>If <cite>user</cite> is not set, the current
+<a class="reference internal" href="transaction.html#trytond.transaction.Transaction.user" title="trytond.transaction.Transaction.user"><code class="xref py py-attr docutils literal notranslate"><span class="pre">user</span></code></a> is used.  Otherwise <cite>user</cite> is
+the user ID to notify.</p>
+<p>If <cite>client</cite> is not set then every client of the user will receive the
+message. If <cite>client</cite> and <cite>user</cite> are not set, the system will send the
+notification to the current user client. Otherwise the notification will
+be sent to the client whose ID matches <cite>client</cite>.</p>
+</dd></dl>
+
+<div class="section" id="notification-message">
+<span id="bus-notification-spec"></span><h3>Notification message<a class="headerlink" href="#notification-message" title="Permalink to this headline">¶</a></h3>
+<p>Notification messages are composed of four parts:</p>
+<dl class="docutils">
+<dt>kind</dt><dd>The string ‘notification’.</dd>
+<dt>title</dt><dd>A string. A one-line summary of the message.</dd>
+<dt>body</dt><dd>A string. The short informative message for the user. It can span multiple
+lines but no markup is allowed.</dd>
+<dt>priority</dt><dd>An integer between 0 (low priority) to 3 (urgent). The notification priority
+on the platform supporting it.</dd>
+</dl>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="tests.html" class="btn btn-neutral float-right" title="Test" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="cache.html" class="btn btn-neutral float-left" title="Cache" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020, Ume Abraham Kalu (Test Documentation)
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
