@@ -16,13 +16,13 @@ import sys
 # import sphinx_rtd_theme
 import sys
 
-sys.setrecursionlimit(1000)
+# sys.setrecursionlimit(1000)
 
 
 # -- Project information -----------------------------------------------------
 
 project = 'Tryton Test'
-copyright = '2020, Ume Abraham Kalu (Test Documentation)'
+copyright = '2020, Ume Abraham Kalu (Testing Documentation)'
 author = 'Ume Abraham Kalu'
 
 # The full version, including alpha/beta/rc tags
@@ -71,8 +71,8 @@ if not on_rtd:  # only import and set the theme if we're building docs locally
     html_theme_path = [sphinx_rtd_theme.get_html_theme_path()]                   
 #     Override default css to get a larger width for local build                 
     def setup(app):                                                              
-        app.add_css_file('custom.css'),
-        app.add_js_file("custom.js"),                                       
+        app.add_css_file('_static/custom.css'),
+        app.add_js_file("_static/custom.js"),                                       
         app.add_js_file("https://cdn.jsdelivr.net/npm/clipboard@1/dist/clipboard.min.js")                                
 else:                                                                            
     # Override default css to get a larger width for ReadTheDoc build            
@@ -82,9 +82,9 @@ else:
             'https://media.readthedocs.org/css/readthedocs-doc-embed.css',       
             '_static/custom.css',
         ],  
-        'js_file':[
-            '_static/custom.js'
-        ]
+#         'js_file':[
+#             '_static/custom.js'
+#         ]
     }
 
 # from sphinx.writers.html import HTMLTranslator
