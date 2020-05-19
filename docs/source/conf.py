@@ -14,15 +14,15 @@ import os
 import sys
 # sys.path.insert(0, os.path.abspath('.'))
 # import sphinx_rtd_theme
-import sys
+# import sys
 
-sys.setrecursionlimit(1000)
+# sys.setrecursionlimit(1000)
 
 
 # -- Project information -----------------------------------------------------
 
 project = 'Tryton Test'
-copyright = '2020, Ume Abraham Kalu (Test Documentation)'
+copyright = '2020, Ume Abraham Kalu (Testing Documentation)'
 author = 'Ume Abraham Kalu'
 
 # The full version, including alpha/beta/rc tags
@@ -35,7 +35,7 @@ release = '0.1'
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
 extensions = [
-    # 'sphinx_copybutton'
+#     'sphinx_copybutton'
 ]
 
 # Add any paths that contain templates here, relative to this directory.
@@ -72,24 +72,25 @@ if not on_rtd:  # only import and set the theme if we're building docs locally
     # Override default css to get a larger width for local build                 
     def setup(app):                                                              
         app.add_css_file('custom.css'),
-        app.add_js_file("custom.js"),                                       
+        app.add_js_file("custom.js"),                                                                            
         app.add_js_file("https://cdn.jsdelivr.net/npm/clipboard@1/dist/clipboard.min.js")                                
 else:                                                                            
     # Override default css to get a larger width for ReadTheDoc build            
     html_context = {                                                             
-        'add_css_file': [                                                           
+        'css_file': [                                                           
             'https://media.readthedocs.org/css/sphinx_rtd_theme.css',            
             'https://media.readthedocs.org/css/readthedocs-doc-embed.css',       
             '_static/custom.css',
         ],                                                                       
     }
-
+#
 from sphinx.writers.html import HTMLTranslator
 class PatchedHTMLTranslator(HTMLTranslator):
     def visit_reference(self, node):
         if node.get('newtab') or not (node.get('target') or node.get('internal') or 'refuri' not in node):
             node['target'] = '_blank'
         super().visit_reference(node)
-
+#
 def setup(app):
     app.set_translator('html', PatchedHTMLTranslator)
+
