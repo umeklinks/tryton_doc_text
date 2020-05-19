@@ -7,7 +7,7 @@ Model
 
 .. class:: Model([id[, \**kwargs]])
 
-This is the base class that every kind of :ref:`model <topics-models>`
+This is the base class that every kind of :ref:`model <index-topics-models>`
 inherits. It defines common attributes of all models.
 
 Class attributes are:

@@ -17,7 +17,7 @@ The model layer
 ===============
 
     * **Models:**
-      :ref:`Model syntax <topics-models>` |
+      :ref:`Model syntax <index-topics-models>` |
       :ref:`Field types <ref-models-fields>` |
       :ref:`Domain syntax <topics-domain>` |
       :ref:`Access rights <topics-access_rights>` |
@@ -37,7 +37,7 @@ The development process
 =======================
 
     * **Modules**
-      :ref:`Module definition <topics-modules>`
+      :ref:`Module definition <index-topics-modules>`
 
 Contents
 ========

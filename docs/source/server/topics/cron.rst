@@ -5,7 +5,7 @@ Scheduled Actions
 =================
 
 Tryton provides a scheduler (aka cron) which can execute methods of
-:ref:`models <topics-models>` periodically at set intervals.
+:ref:`models <index-topics-models>` periodically at set intervals.
 
 The planning is managed by ``ir.cron`` records which store the method to call
 and the interval of time between calls. The method must be a class method of a
