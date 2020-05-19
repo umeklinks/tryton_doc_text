@@ -77,11 +77,14 @@ if not on_rtd:  # only import and set the theme if we're building docs locally
 else:                                                                            
     # Override default css to get a larger width for ReadTheDoc build            
     html_context = {                                                             
-        'add_css_file': [                                                           
+        'css_file': [                                                           
             'https://media.readthedocs.org/css/sphinx_rtd_theme.css',            
             'https://media.readthedocs.org/css/readthedocs-doc-embed.css',       
             '_static/custom.css',
-        ],                                                                       
+        ],  
+        'js_file':[
+            '_static/custom.js'
+        ]
     }
 
 # from sphinx.writers.html import HTMLTranslator
