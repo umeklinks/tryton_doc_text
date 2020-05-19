@@ -1,0 +1,9 @@
+.. _modules-account-eu:
+
+Account Europe Module
+#####################
+
+The ``account_eu`` module implements common accounting requirements in Europe.
+It includes:
+
+    - EC Sales List (ESL)

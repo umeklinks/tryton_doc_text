@@ -1,0 +1,332 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Cache &mdash; Tryton Test 0.1 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Bus" href="bus.html" />
+    <link rel="prev" title="FileStore" href="filestore.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> Tryton Test
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../client-desktop/index-client-desktop.html">Tryton Desktop Client</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../web-client/index-web-client.html">Tryton Web Client</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../index-server.html">Tryton Server</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../index-server.html#first-steps">First steps</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index-server.html#the-model-layer">The model layer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index-server.html#the-view-layer">The view layer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index-server.html#the-development-process">The development process</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../index-server.html#contents">Contents</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../topics/index-topics.html">Using trytond</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="ref-index.html">API Reference</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="models/ref-models-index.html">Models</a></li>
+<li class="toctree-l4"><a class="reference internal" href="wizard.html">Wizard</a></li>
+<li class="toctree-l4"><a class="reference internal" href="wizard.html#state">State</a></li>
+<li class="toctree-l4"><a class="reference internal" href="wizard.html#stateview">StateView</a></li>
+<li class="toctree-l4"><a class="reference internal" href="wizard.html#statetransition">StateTransition</a></li>
+<li class="toctree-l4"><a class="reference internal" href="wizard.html#stateaction">StateAction</a></li>
+<li class="toctree-l4"><a class="reference internal" href="wizard.html#statereport">StateReport</a></li>
+<li class="toctree-l4"><a class="reference internal" href="wizard.html#button">Button</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyson.html">PYSON</a></li>
+<li class="toctree-l4"><a class="reference internal" href="transaction.html">Transaction</a></li>
+<li class="toctree-l4"><a class="reference internal" href="exceptions.html">Exceptions</a></li>
+<li class="toctree-l4"><a class="reference internal" href="tools/ref-tools-index.html">Tools</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pool.html">Pool</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pool.html#poolmeta">PoolMeta</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pool.html#poolbase">PoolBase</a></li>
+<li class="toctree-l4"><a class="reference internal" href="rpc.html">RPC</a></li>
+<li class="toctree-l4"><a class="reference internal" href="rpc.html#rpccache">RPCCache</a></li>
+<li class="toctree-l4"><a class="reference internal" href="i18n.html">Internationalization</a></li>
+<li class="toctree-l4"><a class="reference internal" href="sendmail.html">Sendmail</a></li>
+<li class="toctree-l4"><a class="reference internal" href="filestore.html">FileStore</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">Cache</a></li>
+<li class="toctree-l4"><a class="reference internal" href="bus.html">Bus</a></li>
+<li class="toctree-l4"><a class="reference internal" href="tests.html">Test</a></li>
+<li class="toctree-l4"><a class="reference internal" href="tests.html#moduletestcase">ModuleTestCase</a></li>
+<li class="toctree-l4"><a class="reference internal" href="tests.html#helpers">Helpers</a></li>
+<li class="toctree-l4"><a class="reference internal" href="tests.html#tests-tools">Tests tools</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../index-server.html#indices-glossary-and-tables">Indices, glossary and tables</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../client-library/index-client-library.html">Tryton Scripting Client</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../modules/index-modules.html">App Modules</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Tryton Test</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../index-server.html">Tryton Server</a> &raquo;</li>
+        
+          <li><a href="ref-index.html">API Reference</a> &raquo;</li>
+        
+      <li>Cache</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../_sources/server/ref/cache.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <span class="target" id="module-trytond.cache"><span id="ref-cache"></span></span><div class="section" id="cache">
+<h1>Cache<a class="headerlink" href="#cache" title="Permalink to this headline">¶</a></h1>
+<dl class="py class">
+<dt id="trytond.cache.Cache">
+<em class="property">class </em><code class="descclassname">trytond.cache.</code><code class="descname">Cache</code><span class="sig-paren">(</span><em>name</em><span class="optional">[</span>, <em>size_limit</em><span class="optional">[</span>, <em>duration</em><span class="optional">[</span>, <em>context</em><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#trytond.cache.Cache" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<p>The class is used to cache values between server requests. The <cite>name</cite> should be
+unique and it’s used to identify the cache. We usually use
+<cite>&lt;class_name&gt;.&lt;content_name&gt;</cite> to make it unique. The <cite>size_limit</cite> parameter can
+be used to limit the number of values cached and it has 1024 as the default
+value.  The <cite>duration</cite> parameter defines how long a cached value stays valid
+but if it is not set the value remains valid until it is cleared.  And the
+<cite>context</cite> parameter is used to indicate if the cache depends on the user
+context and is true by default.  The cache is cleaned on <code class="xref py py-class docutils literal notranslate"><span class="pre">Transaction</span></code>
+starts and resets on <code class="xref py py-class docutils literal notranslate"><span class="pre">Transaction</span></code> commit or rollback.</p>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">As there is no deepcopy of the values cached, they must never be mutated
+after being set in or retrieved from the cache.</p>
+</div>
+<dl class="py method">
+<dt id="trytond.cache.get">
+<code class="descclassname">trytond.cache.</code><code class="descname">get</code><span class="sig-paren">(</span><em>key</em><span class="optional">[</span>, <em>default</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#trytond.cache.get" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<p>Retrieve the value of the key in the cache. If a <cite>default</cite> is specified it
+will be returned when the key is missing otherwise it will return <cite>None</cite>.</p>
+<dl class="py method">
+<dt id="trytond.cache.set">
+<code class="descclassname">trytond.cache.</code><code class="descname">set</code><span class="sig-paren">(</span><em><span class="n">key</span></em>, <em><span class="n">value</span></em><span class="sig-paren">)</span><a class="headerlink" href="#trytond.cache.set" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<p>Sets the <cite>value</cite> of the <cite>key</cite> in the cache.</p>
+<dl class="py method">
+<dt id="trytond.cache.clear">
+<code class="descclassname">trytond.cache.</code><code class="descname">clear</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#trytond.cache.clear" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<p>Clears all the keys in the cache.</p>
+<dl class="py method">
+<dt id="trytond.cache.sync">
+<em class="property">classmethod </em><code class="descclassname">trytond.cache.</code><code class="descname">sync</code><span class="sig-paren">(</span><em><span class="n">transaction</span></em><span class="sig-paren">)</span><a class="headerlink" href="#trytond.cache.sync" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<p>Synchronize cache instances using transaction.</p>
+<dl class="py method">
+<dt id="trytond.cache.sync_since">
+<code class="descclassname">trytond.cache.</code><code class="descname">sync_since</code><span class="sig-paren">(</span><em><span class="n">value</span></em><span class="sig-paren">)</span><a class="headerlink" href="#trytond.cache.sync_since" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<p>Return <cite>True</cite> if the last synchronization was done before <cite>value</cite>.</p>
+<dl class="py method">
+<dt id="trytond.cache.commit">
+<em class="property">classmethod </em><code class="descclassname">trytond.cache.</code><code class="descname">commit</code><span class="sig-paren">(</span><em><span class="n">transaction</span></em><span class="sig-paren">)</span><a class="headerlink" href="#trytond.cache.commit" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<p>Apply cache changes from transaction.</p>
+<dl class="py method">
+<dt id="trytond.cache.rollback">
+<em class="property">classmethod </em><code class="descclassname">trytond.cache.</code><code class="descname">rollback</code><span class="sig-paren">(</span><em><span class="n">transaction</span></em><span class="sig-paren">)</span><a class="headerlink" href="#trytond.cache.rollback" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<p>Remove cache changes from transaction.</p>
+<dl class="py method">
+<dt id="trytond.cache.drop">
+<em class="property">static </em><code class="descclassname">trytond.cache.</code><code class="descname">drop</code><span class="sig-paren">(</span><em><span class="n">dbname</span></em><span class="sig-paren">)</span><a class="headerlink" href="#trytond.cache.drop" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<p>Drops all the caches for database <cite>dbname</cite></p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">By default Tryton uses a MemoryCache, but this behaviour can be overridden
+by setting a fully qualified name of an alternative class defined in the
+configuration <cite>class</cite> of the <cite>cache</cite> section.</p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="bus.html" class="btn btn-neutral float-right" title="Bus" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="filestore.html" class="btn btn-neutral float-left" title="FileStore" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020, Ume Abraham Kalu (Test Documentation)
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

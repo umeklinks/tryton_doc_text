@@ -1,0 +1,346 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Tryton Server &mdash; Tryton Test 0.1 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Using trytond" href="topics/index-topics.html" />
+    <link rel="prev" title="Tryton Web Client" href="../web-client/index-web-client.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> Tryton Test
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../client-desktop/index-client-desktop.html">Tryton Desktop Client</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../web-client/index-web-client.html">Tryton Web Client</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Tryton Server</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#first-steps">First steps</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#the-model-layer">The model layer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#the-view-layer">The view layer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#the-development-process">The development process</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#contents">Contents</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="topics/index-topics.html">Using trytond</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ref/ref-index.html">API Reference</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#indices-glossary-and-tables">Indices, glossary and tables</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../client-library/index-client-library.html">Tryton Scripting Client</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../modules/index-modules.html">App Modules</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Tryton Test</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+      <li>Tryton Server</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/server/index-server.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="tryton-server">
+<span id="index-server"></span><h1>Tryton Server<a class="headerlink" href="#tryton-server" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="first-steps">
+<h2>First steps<a class="headerlink" href="#first-steps" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><ul class="simple">
+<li><strong>Installation:</strong>
+<a class="reference internal" href="topics/install.html#topics-install"><span class="std std-ref">Installation</span></a> |
+<a class="reference internal" href="topics/configuration.html#topics-configuration"><span class="std std-ref">Configuration</span></a> |
+<a class="reference internal" href="topics/setup_database.html#topics-setup-database"><span class="std std-ref">Setup a database</span></a> |
+<a class="reference internal" href="topics/start_server.html#topics-start-server"><span class="std std-ref">Start the server</span></a></li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="the-model-layer">
+<h2>The model layer<a class="headerlink" href="#the-model-layer" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><ul class="simple">
+<li><strong>Models:</strong>
+<a class="reference internal" href="topics/models/index-topics-models.html#index-topics-models"><span class="std std-ref">Model syntax</span></a> |
+<a class="reference internal" href="ref/models/fields.html#ref-models-fields"><span class="std std-ref">Field types</span></a> |
+<a class="reference internal" href="topics/domain.html#topics-domain"><span class="std std-ref">Domain syntax</span></a> |
+<a class="reference internal" href="topics/access_rights.html#topics-access-rights"><span class="std std-ref">Access rights</span></a> |
+<a class="reference internal" href="topics/triggers.html#topics-triggers"><span class="std std-ref">Triggers</span></a></li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="the-view-layer">
+<h2>The view layer<a class="headerlink" href="#the-view-layer" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><ul class="simple">
+<li><strong>Views:</strong>
+<a class="reference internal" href="topics/views/index-topics-views.html#topics-views"><span class="std std-ref">View types</span></a> |
+<a class="reference internal" href="topics/views/extension.html#topics-extension"><span class="std std-ref">Extension</span></a></li>
+<li><strong>Reports:</strong>
+<a class="reference internal" href="topics/reports/index-topics-reports.html#topics-reports"><span class="std std-ref">Report definition</span></a></li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="the-development-process">
+<h2>The development process<a class="headerlink" href="#the-development-process" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><ul class="simple">
+<li><strong>Modules</strong>
+<a class="reference internal" href="topics/modules/index-topics-modules.html#index-topics-modules"><span class="std std-ref">Module definition</span></a></li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="contents">
+<h2>Contents<a class="headerlink" href="#contents" title="Permalink to this headline">¶</a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="topics/index-topics.html">Using trytond</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="topics/install.html">How to install Tryton</a></li>
+<li class="toctree-l2"><a class="reference internal" href="topics/configuration.html">Configuration file for Tryton</a></li>
+<li class="toctree-l2"><a class="reference internal" href="topics/setup_database.html">How to setup a database</a></li>
+<li class="toctree-l2"><a class="reference internal" href="topics/logs.html">Logging configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="topics/start_server.html">How to start the server</a></li>
+<li class="toctree-l2"><a class="reference internal" href="topics/models/index-topics-models.html">Models</a></li>
+<li class="toctree-l2"><a class="reference internal" href="topics/backend_types.html">Backend Types supported</a></li>
+<li class="toctree-l2"><a class="reference internal" href="topics/models/fields_default_value.html">Default value of fields</a></li>
+<li class="toctree-l2"><a class="reference internal" href="topics/models/fields_on_change.html">on_change of fields</a></li>
+<li class="toctree-l2"><a class="reference internal" href="topics/domain.html">Domain</a></li>
+<li class="toctree-l2"><a class="reference internal" href="topics/pyson.html">PYSON</a></li>
+<li class="toctree-l2"><a class="reference internal" href="topics/access_rights.html">Access Rights</a></li>
+<li class="toctree-l2"><a class="reference internal" href="topics/user_errors_warnings.html">User Errors and Warnings</a></li>
+<li class="toctree-l2"><a class="reference internal" href="topics/triggers.html">Triggers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="topics/actions.html">Actions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="topics/views/index-topics-views.html">Views</a></li>
+<li class="toctree-l2"><a class="reference internal" href="topics/views/extension.html">Extending View</a></li>
+<li class="toctree-l2"><a class="reference internal" href="topics/wizard.html">Wizard</a></li>
+<li class="toctree-l2"><a class="reference internal" href="topics/reports/index-topics-reports.html">Reports</a></li>
+<li class="toctree-l2"><a class="reference internal" href="topics/rpc.html">Remote Procedure Call</a></li>
+<li class="toctree-l2"><a class="reference internal" href="topics/task_queue.html">Task Queue</a></li>
+<li class="toctree-l2"><a class="reference internal" href="topics/cron.html">Scheduled Actions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="topics/user_application.html">User Application</a></li>
+<li class="toctree-l2"><a class="reference internal" href="topics/bus.html">Sending notifications</a></li>
+<li class="toctree-l2"><a class="reference internal" href="topics/modules/index-topics-modules.html">Modules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="topics/translation.html">Translation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="topics/testing.html">Testing</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="ref/ref-index.html">API Reference</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="ref/models/ref-models-index.html">Models</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ref/wizard.html">Wizard</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ref/wizard.html#state">State</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ref/wizard.html#stateview">StateView</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ref/wizard.html#statetransition">StateTransition</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ref/wizard.html#stateaction">StateAction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ref/wizard.html#statereport">StateReport</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ref/wizard.html#button">Button</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ref/pyson.html">PYSON</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ref/transaction.html">Transaction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ref/exceptions.html">Exceptions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ref/tools/ref-tools-index.html">Tools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ref/pool.html">Pool</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ref/pool.html#poolmeta">PoolMeta</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ref/pool.html#poolbase">PoolBase</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ref/rpc.html">RPC</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ref/rpc.html#rpccache">RPCCache</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ref/i18n.html">Internationalization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ref/sendmail.html">Sendmail</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ref/filestore.html">FileStore</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ref/cache.html">Cache</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ref/bus.html">Bus</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ref/tests.html">Test</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ref/tests.html#moduletestcase">ModuleTestCase</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ref/tests.html#helpers">Helpers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ref/tests.html#tests-tools">Tests tools</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div class="section" id="indices-glossary-and-tables">
+<h2>Indices, glossary and tables<a class="headerlink" href="#indices-glossary-and-tables" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><a class="reference internal" href="../genindex.html"><span class="std std-ref">Index</span></a></li>
+<li><a class="reference internal" href="../py-modindex.html"><span class="std std-ref">Module Index</span></a></li>
+<li><a class="reference internal" href="../search.html"><span class="std std-ref">Search Page</span></a></li>
+</ul>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="topics/index-topics.html" class="btn btn-neutral float-right" title="Using trytond" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="../web-client/index-web-client.html" class="btn btn-neutral float-left" title="Tryton Web Client" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020, Ume Abraham Kalu (Test Documentation)
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

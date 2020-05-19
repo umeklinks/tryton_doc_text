@@ -1,0 +1,356 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Sale Subscription Module &mdash; Tryton Test 0.1 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Sale Subscription Asset Module" href="modules-sale-subscription-asset.html" />
+    <link rel="prev" title="Sale Subscription" href="index-sale_subscription.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> Tryton Test
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../client-desktop/index-client-desktop.html">Tryton Desktop Client</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../web-client/index-web-client.html">Tryton Web Client</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../server/index-server.html">Tryton Server</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../client-library/index-client-library.html">Tryton Scripting Client</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../index-modules.html">App Modules</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../account/account.html">Accounting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../analytic-accounting/index-analytic-accounting.html">Analytic Accounting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../commission/index-commission.html">Commission</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../edocument/index-edocument.html">Electronic Document</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../marketing/index-marketing.html">Marketing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../production/index-production.html">Production</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../project/index-project.html">Project</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../purchase/index-purchase.html">Purchase</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sale/index-sale.html">Sale</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="index-sale_subscription.html">Sale Subscription</a><ul class="current">
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Sale Subscription Module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#subscription">Subscription</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#service">Service</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#recurrence-rule">Recurrence Rule</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="modules-sale-subscription-asset.html">Sale Subscription Asset Module</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../stock/index-stock.html">Stock</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../timesheet/index-timesheet.html">Timesheet</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../bank/modules-bank.html">Bank Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../company/index-company.html">Company</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../carrier/index-carrier.html">Carrier</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../country/modules-country.html">Country Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../currency/modules-currency.html">Currency Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../customs/modules-customs.html">Customs Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../dashboard/modules-dashboard.html">Dashboard Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../google-maps/modules-google-maps.html">Google Maps Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../party/index-party.html">Party</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../product/index-product.html">Product</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../authentication/index-authentication.html">Authentication</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../notification-email/modules-notification-email.html">Notification Email Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../user-role/modules-user-role.html">User Role Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../web/index-web.html">Web</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Tryton Test</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../index-modules.html">App Modules</a> &raquo;</li>
+        
+          <li><a href="index-sale_subscription.html">Sale Subscription</a> &raquo;</li>
+        
+      <li>Sale Subscription Module</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../_sources/modules/sale_subscription/modules-sale-subscription.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="sale-subscription-module">
+<span id="modules-sale-subscription"></span><h1>Sale Subscription Module<a class="headerlink" href="#sale-subscription-module" title="Permalink to this headline">¶</a></h1>
+<p>The sale subscription module defines subscription, services and recurrence rule
+models.</p>
+<div class="section" id="subscription">
+<h2>Subscription<a class="headerlink" href="#subscription" title="Permalink to this headline">¶</a></h2>
+<p>A subscription defines how some recurring services are periodically invoiced.
+The invoice is generated based on the consumption of each services. Here is the
+extensive list of the fields:</p>
+<ul>
+<li><p class="first">Party: The customer.</p>
+</li>
+<li><p class="first">Contact: The contact who placed the order.</p>
+</li>
+<li><p class="first">Invoice Party: An optional different party to invoice.</p>
+</li>
+<li><p class="first">Invoice Address: The invoice address of the customer.</p>
+</li>
+<li><p class="first">Number: The internal reference of the subscription.</p>
+</li>
+<li><p class="first">Reference: The optional external reference of the subscription.</p>
+</li>
+<li><p class="first">Description: An optional description for the subscription.</p>
+</li>
+<li><p class="first">Start Date: The date at which the subscription starts.</p>
+</li>
+<li><p class="first">End Date: The optional end date of the subscription.</p>
+</li>
+<li><p class="first">Invoice Start Date: The date at which the invoice starts to be generated.</p>
+</li>
+<li><p class="first">Invoice Recurrence: The definition of the invoicing recurrence.</p>
+</li>
+<li><p class="first">Payment Term: The payment term to apply on the invoices.</p>
+</li>
+<li><p class="first">Currency: Define the currency to use for the subscription. All service prices
+will be computed accordingly.</p>
+</li>
+<li><p class="first">Lines:</p>
+<blockquote>
+<div><ul class="simple">
+<li>Service: A required reference to the service subscribed.</li>
+<li>Description: The description of the service subscribed.</li>
+<li>Consumption Recurrence: The optional recurrence of consumption of the
+service.</li>
+<li>Quantity: The quantity consumed on each occurrence.</li>
+<li>Unit: The unit of measure of the quantity.</li>
+<li>Unit Price: The unit price of the service expressed in the currency of
+the subscription.</li>
+<li>Start Date: An optional later start date than the subscription.</li>
+<li>End Date: An optional earlier end date than the subscription.</li>
+</ul>
+</div></blockquote>
+</li>
+<li><p class="first">States: The state of the subscription. May take one of the following values:
+Draft, Quotation, Running, Closed, Canceled.</p>
+</li>
+<li><p class="first">Company: The company which issue the sale order.</p>
+</li>
+</ul>
+<p>A running subscription can be modified by going back to draft and edit. Some
+field may not more be editable if the consumption has already started.
+The draft subscription is momentary stopped until it is set back to running.</p>
+<p>The consumptions are created by schedulers or by a wizard.
+Idem for the creation of the invoices.</p>
+</div>
+<div class="section" id="service">
+<h2>Service<a class="headerlink" href="#service" title="Permalink to this headline">¶</a></h2>
+<p>A subscription service defines the default consumption of a product. It is
+composed of the fields:</p>
+<ul class="simple">
+<li>Product: A product of type service.</li>
+<li>Consumption Recurrence: The recurrence at which the service is consumed.</li>
+<li>Consumption Delay: A delay to apply between the date the consumption is
+created and the date of the consumption.</li>
+</ul>
+</div>
+<div class="section" id="recurrence-rule">
+<h2>Recurrence Rule<a class="headerlink" href="#recurrence-rule" title="Permalink to this headline">¶</a></h2>
+<p>It defines combination of rules which compute the occurrence dates.</p>
+<ul>
+<li><p class="first">Name: The name of the rule.</p>
+</li>
+<li><p class="first">Rules:</p>
+<blockquote>
+<div><ul class="simple">
+<li>Exclusive: Define if the rule excludes the resulted dates.</li>
+<li>Frequency: Daily, Weekly, Monthly, Yearly.</li>
+<li>Interval: The interval of the frequency</li>
+<li>By Week Day: Defines the list of weekdays where the recurrence will be
+applied.</li>
+<li>By Month Day: Defines the list of month days to apply the recurrence to.</li>
+<li>By Year Day: Defines the list of year days to apply the recurrence to.</li>
+<li>By Week Number: Defines the list of week numbers (ISO8601) to apply the
+recurrence to.</li>
+<li>By Month: Defines the list of months to apply the recurrence to.</li>
+<li>By Position: Defines the list of occurrence positions.</li>
+<li>Week Start Day.</li>
+</ul>
+</div></blockquote>
+</li>
+</ul>
+<p>The computation of occurrences is base on the <a class="reference external" href="https://dateutil.readthedocs.io/en/stable/rrule.html" target="_blank">python-dateutil library</a>.</p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="modules-sale-subscription-asset.html" class="btn btn-neutral float-right" title="Sale Subscription Asset Module" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="index-sale_subscription.html" class="btn btn-neutral float-left" title="Sale Subscription" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020, Ume Abraham Kalu (Test Documentation)
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

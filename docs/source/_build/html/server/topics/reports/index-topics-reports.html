@@ -1,0 +1,466 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Reports &mdash; Tryton Test 0.1 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../../../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+        <script src="../../../_static/jquery.js"></script>
+        <script src="../../../_static/underscore.js"></script>
+        <script src="../../../_static/doctools.js"></script>
+        <script src="../../../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="Remote Procedure Call" href="../rpc.html" />
+    <link rel="prev" title="Wizard" href="../wizard.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../../index.html" class="icon icon-home"> Tryton Test
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../client-desktop/index-client-desktop.html">Tryton Desktop Client</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../web-client/index-web-client.html">Tryton Web Client</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../../index-server.html">Tryton Server</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../index-server.html#first-steps">First steps</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../index-server.html#the-model-layer">The model layer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../index-server.html#the-view-layer">The view layer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../index-server.html#the-development-process">The development process</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../../index-server.html#contents">Contents</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="../index-topics.html">Using trytond</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="../install.html">How to install Tryton</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../configuration.html">Configuration file for Tryton</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../setup_database.html">How to setup a database</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../logs.html">Logging configuration</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../start_server.html">How to start the server</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../models/index-topics-models.html">Models</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../backend_types.html">Backend Types supported</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../models/fields_default_value.html">Default value of fields</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../models/fields_on_change.html">on_change of fields</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../domain.html">Domain</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../pyson.html">PYSON</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../access_rights.html">Access Rights</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../user_errors_warnings.html">User Errors and Warnings</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../triggers.html">Triggers</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../actions.html">Actions</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../views/index-topics-views.html">Views</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../views/extension.html">Extending View</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../wizard.html">Wizard</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">Reports</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../rpc.html">Remote Procedure Call</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../task_queue.html">Task Queue</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../cron.html">Scheduled Actions</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../user_application.html">User Application</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../bus.html">Sending notifications</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../modules/index-topics-modules.html">Modules</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../translation.html">Translation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../testing.html">Testing</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../ref/ref-index.html">API Reference</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../index-server.html#indices-glossary-and-tables">Indices, glossary and tables</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../client-library/index-client-library.html">Tryton Scripting Client</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../modules/index-modules.html">App Modules</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">Tryton Test</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../../index-server.html">Tryton Server</a> &raquo;</li>
+        
+          <li><a href="../index-topics.html">Using trytond</a> &raquo;</li>
+        
+      <li>Reports</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../../_sources/server/topics/reports/index-topics-reports.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="reports">
+<span id="topics-reports"></span><h1>Reports<a class="headerlink" href="#reports" title="Permalink to this headline">¶</a></h1>
+<p>Tryton can generate dynamic reports in many formats from templates. The reports
+are generated in one step as follows: a report template in a special file
+format, explained later, is interpolated with dynamic data and placed into a
+document of the same file format. Tryton’s ability to generate documents in
+this way allows documents to be generated for any editor that supports the Open
+Document Format which can be converted to third party formats, such as PDF.
+<a class="reference external" href="https://www.libreoffice.org/" target="_blank">LibreOffice</a> must be installed on the server host for format conversion.</p>
+<div class="section" id="report-templates">
+<h2>Report Templates<a class="headerlink" href="#report-templates" title="Permalink to this headline">¶</a></h2>
+<p>Report templates are files with a format supported by relatorio, that contain
+snippets of the Genshi templating language.</p>
+<p>Here is an example of the text that would be placed in an open document text
+document, <code class="docutils literal notranslate"><span class="pre">*.odt</span></code>, that displays the full name and the address lines of the
+first address of each party. The genshi code is placed in the template using
+<code class="docutils literal notranslate"><span class="pre">Functions-&gt;Placeholder-&gt;Text</span></code> Fields. These are specific to ODT files.</p>
+</div>
+<div class="section" id="report-api">
+<h2>Report API<a class="headerlink" href="#report-api" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="python-api">
+<h3>Python API<a class="headerlink" href="#python-api" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="xml-description">
+<h3>XML Description<a class="headerlink" href="#xml-description" title="Permalink to this headline">¶</a></h3>
+<p>When defining an <cite>ir.action.report</cite> the following attributes are available:</p>
+<blockquote>
+<div><ul class="simple">
+<li><code class="docutils literal notranslate"><span class="pre">name</span></code>: The name of the report.</li>
+<li><code class="docutils literal notranslate"><span class="pre">report_name</span></code>: The name of the report model, for example
+my_module.my_report.  This is the name you would use with <cite>Pool().get</cite></li>
+<li><code class="docutils literal notranslate"><span class="pre">model</span></code>: If this report is of an existing model this is its name.
+For example my_module.my_model. Custom reports that aren’t of a specific
+model will need to leave this blank.</li>
+<li><code class="docutils literal notranslate"><span class="pre">report</span></code>: The path to the template file starting with the module, for
+example my_module/my_report.odt.</li>
+<li><code class="docutils literal notranslate"><span class="pre">template_extension</span></code>: The template format.</li>
+<li><code class="docutils literal notranslate"><span class="pre">single</span></code>: <cite>True</cite> if the template works only for one record. If such
+report is called with more than one record, a zip file containing all the
+reports will be generated.</li>
+</ul>
+</div></blockquote>
+</div>
+</div>
+<div class="section" id="report-usage">
+<h2>Report Usage<a class="headerlink" href="#report-usage" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="using-genshi-and-open-office-reports">
+<h3>Using genshi and open office reports<a class="headerlink" href="#using-genshi-and-open-office-reports" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="setting-up-an-odt-file">
+<h4>Setting up an ODT file<a class="headerlink" href="#setting-up-an-odt-file" title="Permalink to this headline">¶</a></h4>
+<p>If you are creating a report from scratch you should perform the following
+steps:</p>
+<blockquote>
+<div><ul>
+<li><p class="first">Remove user data</p>
+<blockquote>
+<div><ul class="simple">
+<li>“File &gt; Properties…”</li>
+<li>Uncheck “Apply user data”</li>
+<li>Click on “Reset”</li>
+</ul>
+</div></blockquote>
+</li>
+<li><p class="first">Select Style and Formatting</p>
+<blockquote>
+<div><ul class="simple">
+<li>Press F11 or “Format &gt; Style and Formatting”</li>
+<li>Click on the drop down at the right top</li>
+<li>Select “Load Styles”</li>
+<li>Click on “From File…”</li>
+<li>Select a existing report (<code class="docutils literal notranslate"><span class="pre">company/header_A4.odt</span></code>)</li>
+</ul>
+</div></blockquote>
+</li>
+<li><p class="first">Set some parameters</p>
+<blockquote>
+<div><ul class="simple">
+<li>Set the zoom to 100% (View&gt;Zoom)</li>
+<li>Set the document in read-only mode (<code class="docutils literal notranslate"><span class="pre">File&gt;Properties&gt;Security</span></code>)
+(Decreases the time it takes to open the document.)</li>
+</ul>
+</div></blockquote>
+</li>
+<li><p class="first">Usage</p>
+<blockquote>
+<div><ul class="simple">
+<li>Use Liberation fonts (Only necessary if being officially included in
+Tryton)</li>
+<li>Try to use styles in report templates so that they can be extended.</li>
+</ul>
+</div></blockquote>
+</li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="using-genshi-in-an-odt-file">
+<h4>Using Genshi in an ODT file<a class="headerlink" href="#using-genshi-in-an-odt-file" title="Permalink to this headline">¶</a></h4>
+<p>The genshi code is placed in the template using Functions-&gt;Placeholder-&gt;Text
+Fields. These are specific to <code class="docutils literal notranslate"><span class="pre">*.odt</span></code> files and can be found in the open
+office menu at Insert -&gt; Fields -&gt; Other and then Functions -&gt; Placeholder -&gt;
+Text.  Type genshi code into the Placeholder field.  There are alternatives for
+embedding genshi that are supported by relatorio but their use is not
+encouraged within Tryton.</p>
+<p>Also note that relatorio only supports a subset of genshi. The directives that
+are supported by relatorio can be found here: <a class="reference external" href="https://relatorio.readthedocs.io/en/latest/quickexample.html" target="_blank">Quick Example</a> .</p>
+<p>See genshi’s documentation for more information: <a class="reference external" href="http://genshi.edgewall.org/wiki/Documentation/0.5.x/xml-templates.html" target="_blank">Genshi XML Templates</a></p>
+</div>
+<div class="section" id="examples">
+<h4>Examples<a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h4>
+<p>The modules company, account_invoice and stock all contain helpful examples.</p>
+<p>Also see relatorio’s site for some examples:</p>
+<blockquote>
+<div><ul class="simple">
+<li><a class="reference external" href="https://relatorio.readthedocs.io/en/latest/quickexample.html" target="_blank">Quick Example</a></li>
+<li><a class="reference external" href="https://relatorio.readthedocs.io/en/latest/indepthexample.html" target="_blank">In Depth Introduction</a></li>
+<li><a class="reference external" href="http://hg.tryton.org/relatorio/file/default/examples" target="_blank">Example Documents</a></li>
+</ul>
+</div></blockquote>
+</div>
+</div>
+<div class="section" id="accessing-models-from-within-the-report">
+<h3>Accessing models from within the report<a class="headerlink" href="#accessing-models-from-within-the-report" title="Permalink to this headline">¶</a></h3>
+<p>By default instances of the models the report is for are passed in to the
+report via a list of objects called <cite>records</cite> (or <cite>record</cite> if <cite>single</cite> is
+<cite>True</cite>).  These records behave just as they would within trytond itself. You
+can access any of the models relations as well.  For example within the invoice
+report each object is an invoice and you can access the name of the party of
+the invoice via <cite>invoice.party.name</cite>.  Additional objects can be passed to a
+report. This is discussed below in <cite>Passing custom data to a report</cite>.</p>
+<p>Within Tryton the underlying model the report can be found by following the
+Menu to <code class="docutils literal notranslate"><span class="pre">Administration</span> <span class="pre">&gt;</span> <span class="pre">UI</span> <span class="pre">&gt;</span> <span class="pre">Actions</span> <span class="pre">&gt;</span> <span class="pre">Report</span></code>. Furthermore in tryton the
+fields for that model can be found by following the menu to <code class="docutils literal notranslate"><span class="pre">Administration</span> <span class="pre">&gt;</span>
+<span class="pre">Model</span> <span class="pre">&gt;</span> <span class="pre">Model</span></code>.  Model relation fields can be accessed to any depth, for
+example, one could access <cite>invoice.party.addresses</cite> to get a list of addresses
+for the party of an invoice.</p>
+</div>
+<div class="section" id="creating-a-simple-report-template-for-a-model-from-client">
+<h3>Creating a simple report template for a model from client<a class="headerlink" href="#creating-a-simple-report-template-for-a-model-from-client" title="Permalink to this headline">¶</a></h3>
+<p>Once you have created a report template it has to be uploaded to trytond. This
+can be done by creating a new record in the
+<code class="docutils literal notranslate"><span class="pre">Administration</span> <span class="pre">&gt;</span> <span class="pre">UI</span> <span class="pre">&gt;</span> <span class="pre">Actions</span> <span class="pre">&gt;</span> <span class="pre">Report</span></code> menu. Just make sure to include the
+template file in the content field.</p>
+<p>In order to make the report printable from a model create a “Print form”
+keyword related to the model where the report should be available.</p>
+</div>
+<div class="section" id="creating-a-simple-report-template-for-a-model-in-xml">
+<h3>Creating a simple report template for a model in XML<a class="headerlink" href="#creating-a-simple-report-template-for-a-model-in-xml" title="Permalink to this headline">¶</a></h3>
+<p>Less work has to be done if you just want a simple report representation of a
+model.  There are just 2 steps.  First, create a report template file in a
+format supported by relatorio.  Second, describe your report in XML making sure
+to define the correct <code class="docutils literal notranslate"><span class="pre">report_name</span></code> and <code class="docutils literal notranslate"><span class="pre">model</span></code>.</p>
+</div>
+<div class="section" id="replacing-existing-tryton-reports">
+<h3>Replacing existing Tryton reports<a class="headerlink" href="#replacing-existing-tryton-reports" title="Permalink to this headline">¶</a></h3>
+<p>To replace an existing report you must deactivate the old report and activate
+the new report.</p>
+<p>For example to deactivate the sale report:</p>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;record</span> <span class="na">model=</span><span class="s">&quot;ir.action.report&quot;</span> <span class="na">id=</span><span class="s">&quot;sale.report_sale&quot;</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;field</span> <span class="na">name=</span><span class="s">&quot;active&quot;</span> <span class="na">eval=</span><span class="s">&quot;False&quot;</span><span class="nt">/&gt;</span>
+<span class="nt">&lt;/record&gt;</span>
+</pre></div>
+</div>
+<p>Then you must activate the new sale report that exists in your new module:</p>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;record</span> <span class="na">model=</span><span class="s">&quot;ir.action.report&quot;</span> <span class="na">id=</span><span class="s">&quot;report_sale&quot;</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;field</span> <span class="na">name=</span><span class="s">&quot;name&quot;</span><span class="nt">&gt;</span>Sale<span class="nt">&lt;/field&gt;</span>
+  <span class="nt">&lt;field</span> <span class="na">name=</span><span class="s">&quot;report_name&quot;</span><span class="nt">&gt;</span>sale.sale<span class="nt">&lt;/field&gt;</span>
+  <span class="nt">&lt;field</span> <span class="na">name=</span><span class="s">&quot;model&quot;</span><span class="nt">&gt;</span>sale.sale<span class="nt">&lt;/field&gt;</span>
+  <span class="nt">&lt;field</span> <span class="na">name=</span><span class="s">&quot;report&quot;</span><span class="nt">&gt;</span>my_module/sale.odt<span class="nt">&lt;/field&gt;</span>
+  <span class="nt">&lt;field</span> <span class="na">name=</span><span class="s">&quot;template_extension&quot;</span><span class="nt">&gt;</span>odt<span class="nt">&lt;/field&gt;</span>
+<span class="nt">&lt;/record&gt;</span>
+</pre></div>
+</div>
+<p>And create the keyword for the new report:</p>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;record</span> <span class="na">model=</span><span class="s">&quot;ir.action.keyword&quot;</span> <span class="na">id=</span><span class="s">&quot;report_sale_keyword&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;field</span> <span class="na">name=</span><span class="s">&quot;keyword&quot;</span><span class="nt">&gt;</span>form_print<span class="nt">&lt;/field&gt;</span>
+    <span class="nt">&lt;field</span> <span class="na">name=</span><span class="s">&quot;model&quot;</span><span class="nt">&gt;</span>sale.sale,-1<span class="nt">&lt;/field&gt;</span>
+    <span class="nt">&lt;field</span> <span class="na">name=</span><span class="s">&quot;action&quot;</span> <span class="na">ref=</span><span class="s">&quot;report_sale&quot;</span><span class="nt">/&gt;</span>
+<span class="nt">&lt;/record&gt;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="passing-custom-data-to-a-report">
+<h3>Passing custom data to a report<a class="headerlink" href="#passing-custom-data-to-a-report" title="Permalink to this headline">¶</a></h3>
+<p>In this example <cite>Report.get_context</cite> is overridden and an employee
+object is set into context.  Now the invoice report will be able to access the
+employee object.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">trytond.report</span> <span class="kn">import</span> <span class="n">Report</span>
+<span class="kn">from</span> <span class="nn">tryton.pool</span> <span class="kn">import</span> <span class="n">Pool</span>
+
+<span class="k">class</span> <span class="nc">InvoiceReport</span><span class="p">(</span><span class="n">Report</span><span class="p">):</span>
+    <span class="vm">__name__</span> <span class="o">=</span> <span class="s1">&#39;account.invoice&#39;</span>
+
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">get_context</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">records</span><span class="p">,</span> <span class="n">data</span><span class="p">):</span>
+        <span class="n">pool</span> <span class="o">=</span> <span class="n">Pool</span><span class="p">()</span>
+        <span class="n">Employee</span> <span class="o">=</span> <span class="n">pool</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;company.employee&#39;</span><span class="p">)</span>
+
+        <span class="n">context</span> <span class="o">=</span> <span class="nb">super</span><span class="p">(</span><span class="n">InvoiceReport</span><span class="p">,</span> <span class="bp">cls</span><span class="p">)</span><span class="o">.</span><span class="n">get_context</span><span class="p">(</span><span class="n">records</span><span class="p">,</span> <span class="n">data</span><span class="p">)</span>
+        <span class="n">employee_id</span> <span class="o">=</span> <span class="n">Transaction</span><span class="p">()</span><span class="o">.</span><span class="n">context</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;employee&#39;</span><span class="p">)</span>
+        <span class="n">employee</span> <span class="o">=</span> <span class="n">Employee</span><span class="p">(</span><span class="n">employee_id</span><span class="p">)</span> <span class="k">if</span> <span class="n">employee_id</span> <span class="k">else</span> <span class="bp">None</span>
+        <span class="n">context</span><span class="p">[</span><span class="s1">&#39;employee&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">employee</span>
+
+        <span class="k">return</span> <span class="n">context</span>
+
+<span class="n">Pool</span><span class="o">.</span><span class="n">register</span><span class="p">(</span><span class="n">InvoiceReport</span><span class="p">,</span> <span class="n">type_</span><span class="o">=</span><span class="s1">&#39;report&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../rpc.html" class="btn btn-neutral float-right" title="Remote Procedure Call" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="../wizard.html" class="btn btn-neutral float-left" title="Wizard" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020, Ume Abraham Kalu (Test Documentation)
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

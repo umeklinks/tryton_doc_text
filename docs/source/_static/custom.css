@@ -6212,7 +6212,8 @@ html {
 }
 
 .wy-body-for-nav {
-    background: #fcfcfc
+    background: #fcfcfc;
+    width: 1500px;
 }
 
 .wy-grid-for-nav {
@@ -6296,7 +6297,7 @@ html {
 .wy-nav-content {
     padding: 1.618em 3.236em;
     max-height: 100%;
-    max-width: 1050px !important;
+    max-width: 100vh !important;
     margin: auto
 }
 
@@ -7368,4 +7369,28 @@ span[id*=MathJax-Span] {
     font-weight: 700;
     src: url(fonts/Roboto-Slab-Bold.woff2?9984f4a9bda09be08e83f2506954adbe) format("woff2"), url(fonts/Roboto-Slab-Bold.woff?bed5564a116b05148e3b3bea6fb1162a) format("woff");
     font-display: swap
+}
+
+button.copybtn {
+    webkit-transition: opacity .3s ease-in-out;
+    -o-transition: opacity .3s ease-in-out;
+    transition: opacity .3s ease-in-out;
+    opacity: 0;
+    padding: 2px 6px;
+    position: absolute;
+    right: 4px;
+    top: 4px;
+}
+
+div.highlight:hover .copybtn,
+div.highlight .copybtn:focus {
+    opacity: .3;
+}
+
+div.highlight .copybtn:hover {
+    opacity: 1;
+}
+
+div.highlight {
+    position: relative;
 }
