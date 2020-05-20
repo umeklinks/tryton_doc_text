@@ -1,0 +1,264 @@
+├── client-desktop
+│   ├── glossary.rst
+│   ├── index-client-desktop.rst
+│   ├── installation.rst
+│   └── usage.rst
+├── client-library
+│   └── index-client-library.rst
+├── conf.py
+├── contents.rst
+├── index.rst
+├── modules
+│   ├── account
+│   │   ├── account.rst
+│   │   ├── modules-account-asset.rst
+│   │   ├── modules-account-be.rst
+│   │   ├── modules-account-cash-rounding.rst
+│   │   ├── modules-account-credit-limit.rst
+│   │   ├── modules-account-deposit.rst
+│   │   ├── modules-account-de-skr03.rst
+│   │   ├── modules-account-dunning-email.rst
+│   │   ├── modules-account-dunning-fee.rst
+│   │   ├── modules-account-dunning-letter.rst
+│   │   ├── modules-account-dunning.rst
+│   │   ├── modules-account-es.rst
+│   │   ├── modules-account-eu.rst
+│   │   ├── modules-account-fr-chorus.rst
+│   │   ├── modules-account-fr.rst
+│   │   ├── modules-account-invoice-correction.rst
+│   │   ├── modules-account-invoice-history.rst
+│   │   ├── modules-account-invoice-line-standalone.rst
+│   │   ├── modules-account-invoice.rst
+│   │   ├── modules-account-invoice-secondary-unit.rst
+│   │   ├── modules-account-invoice-stock.rst
+│   │   ├── modules-account-payment-clearing.rst
+│   │   ├── modules-account-payment.rst
+│   │   ├── modules-account-payment-sepa-cfonb.rst
+│   │   ├── modules-account-payment-sepa.rst
+│   │   ├── modules-account-payment-stripe.rst
+│   │   ├── modules-account-product.rst
+│   │   ├── modules-account.rst
+│   │   ├── modules-account-statement-aeb43.rst
+│   │   ├── modules-account-statement-coda.rst
+│   │   ├── modules-account-statement-ofx.rst
+│   │   ├── modules-account-statement.rst
+│   │   ├── modules-account-statement-rule.rst
+│   │   ├── modules-account-stock-anglo-saxon.rst
+│   │   ├── modules-account-stock-continental.rst
+│   │   ├── modules-account-stock-landed-cost.rst
+│   │   ├── modules-account-stock-landed-cost-weight.rst
+│   │   ├── modules-account-tax-cash.rst
+│   │   └── modules-account-tax-rule-country.rst
+│   ├── analytic-accounting
+│   │   ├── index-analytic-accounting.rst
+│   │   ├── modules-analytic-account.rst
+│   │   ├── modules-analytic-invoice.rst
+│   │   ├── modules-analytic-purchase.rst
+│   │   └── modules-analytic-sale.rst
+│   ├── authentication
+│   │   ├── index-authentication.rst
+│   │   ├── modules-authentication-sms.rst
+│   │   └── modules-ldap-authentication.rst
+│   ├── bank
+│   │   └── modules-bank.rst
+│   ├── carrier
+│   │   ├── index-carrier.rst
+│   │   ├── modules-carrier-percentage.rst
+│   │   ├── modules-carrier.rst
+│   │   └── modules-carrier-weight.rst
+│   ├── commission
+│   │   ├── index-commission.rst
+│   │   ├── modules-commission.rst
+│   │   └── modules-commission-waiting.rst
+│   ├── company
+│   │   ├── index-company.rst
+│   │   ├── modules-company.rst
+│   │   └── modules-company-work-time.rst
+│   ├── country
+│   │   └── modules-country.rst
+│   ├── currency
+│   │   └── modules-currency.rst
+│   ├── customs
+│   │   └── modules-customs.rst
+│   ├── dashboard
+│   │   └── modules-dashboard.rst
+│   ├── edocument
+│   │   ├── index-edocument.rst
+│   │   ├── modules-edocument-uncefact.rst
+│   │   └── modules-edocument-unece.rst
+│   ├── google-maps
+│   │   └── modules-google-maps.rst
+│   ├── index-modules.rst
+│   ├── marketing
+│   │   ├── index-marketing.rst
+│   │   ├── modules-marketing-automation.rst
+│   │   └── modules-marketing.rst
+│   ├── notification-email
+│   │   └── modules-notification-email.rst
+│   ├── party
+│   │   ├── index-party.rst
+│   │   ├── modules-party-relationship.rst
+│   │   ├── modules-party.rst
+│   │   └── modules-party-siret.rst
+│   ├── product
+│   │   ├── index-product.rst
+│   │   ├── modules-product-attribute.rst
+│   │   ├── modules-product-classification.rst
+│   │   ├── modules-product-classification-taxonomic.rst
+│   │   ├── modules-product-cost-fifo.rst
+│   │   ├── modules-product-cost-history.rst
+│   │   ├── modules-product-measurements.rst
+│   │   ├── modules-product-price-list-dates.rst
+│   │   ├── modules-product-price-list-parent.rst
+│   │   ├── modules-product-price-list.rst
+│   │   └── modules-product.rst
+│   ├── production
+│   │   ├── index-production.rst
+│   │   ├── modules-production-outsourcing.rst
+│   │   ├── modules-production-routing.rst
+│   │   ├── modules-production.rst
+│   │   ├── modules-production-split.rst
+│   │   ├── modules-production-work.rst
+│   │   └── modules-production-work-timesheet.rst
+│   ├── project
+│   │   ├── index-project.rst
+│   │   ├── modules-project-invoice.rst
+│   │   ├── modules-project-plan.rst
+│   │   ├── modules-project-revenue.rst
+│   │   └── modules-project.rst
+│   ├── purchase
+│   │   ├── index-purchase.rst
+│   │   ├── modules-purchase-amendment.rst
+│   │   ├── modules-purchase-history.rst
+│   │   ├── modules-purchase-invoice-line-standalone.rst
+│   │   ├── modules-purchase-request-quotation.rst
+│   │   ├── modules-purchase-request.rst
+│   │   ├── modules-purchase-requisition.rst
+│   │   ├── modules-purchase.rst
+│   │   ├── modules-purchase-secondary-unit.rst
+│   │   └── modules-shipment-cost.rst
+│   ├── sale
+│   │   ├── index-sale.rst
+│   │   ├── modules-sale-advance-payment.rst
+│   │   ├── modules-sale-amendment.rst
+│   │   ├── modules-sale-complaint.rst
+│   │   ├── modules-sale-credit-limit.rst
+│   │   ├── modules-sale-extra.rst
+│   │   ├── modules-sale-history.rst
+│   │   ├── modules-sale-invoice-grouping.rst
+│   │   ├── modules-sale-opportunity.rst
+│   │   ├── modules-sale-payment.rst
+│   │   ├── modules-sale-price-list.rst
+│   │   ├── modules-sale-product-customer.rst
+│   │   ├── modules-sale-promotion-coupon.rst
+│   │   ├── modules-sale-promotion.rst
+│   │   ├── modules-sale.rst
+│   │   ├── modules-sale-secondary-unit.rst
+│   │   ├── modules-sale-shipment-cost.rst
+│   │   ├── modules-sale-shipment-grouping.rst
+│   │   ├── modules-sale-shipment-tolerance.rst
+│   │   ├── modules-sale-stock-quantity.rst
+│   │   ├── modules-sale-supply-drop-shipment.rst
+│   │   ├── modules-sale-supply-production.rst
+│   │   └── modules-sale-supply.rst
+│   ├── sale_subscription
+│   │   ├── index-sale_subscription.rst
+│   │   ├── modules-sale-subscription-asset.rst
+│   │   └── modules-sale-subscription.rst
+│   ├── stock
+│   │   ├── index-stock.rst
+│   │   ├── modules-stock-consignment.rst
+│   │   ├── modules-stock-forecast.rst
+│   │   ├── modules-stock-inventory-location.rst
+│   │   ├── modules-stock-location-move.rst
+│   │   ├── modules-stock-location-sequence.rst
+│   │   ├── modules-stock-lot.rst
+│   │   ├── modules-stock-lot-sled.rst
+│   │   ├── modules-stock-lot-unit.rst
+│   │   ├── modules-stock-package.rst
+│   │   ├── modules-stock-package-shipping-dpd.rst
+│   │   ├── modules-stock-package-shipping.rst
+│   │   ├── modules-stock-package-shipping-ups.rst
+│   │   ├── modules-stock-product-location.rst
+│   │   ├── modules-stock.rst
+│   │   ├── modules-stock-secondary-unit.rst
+│   │   ├── modules-stock-shipment-measurements.rst
+│   │   ├── modules-stock-split.rst
+│   │   ├── modules-stock-supply-day.rst
+│   │   ├── modules-stock-supply-forecast.rst
+│   │   ├── modules-stock-supply-production.rst
+│   │   └── modules-stock-supply.rst
+│   ├── timesheet
+│   │   ├── index-timesheet.rst
+│   │   ├── modules-timesheet-cost.rst
+│   │   └── modules-timesheet.rst
+│   ├── user-role
+│   │   └── modules-user-role.rst
+│   └── web
+│       ├── index-web.rst
+│       ├── modules-web-shortener.rst
+│       └── modules-web-user.rst
+├── server
+│   ├── index-server.rst
+│   ├── ref
+│   │   ├── bus.rst
+│   │   ├── cache.rst
+│   │   ├── exceptions.rst
+│   │   ├── filestore.rst
+│   │   ├── i18n.rst
+│   │   ├── models
+│   │   │   ├── fields.rst
+│   │   │   ├── models.rst
+│   │   │   └── ref-models-index.rst
+│   │   ├── pool.rst
+│   │   ├── pyson.rst
+│   │   ├── ref-index.rst
+│   │   ├── rpc.rst
+│   │   ├── sendmail.rst
+│   │   ├── tests.rst
+│   │   ├── tools
+│   │   │   ├── misc.rst
+│   │   │   ├── ref-tools-index.rst
+│   │   │   └── singleton.rst
+│   │   ├── transaction.rst
+│   │   └── wizard.rst
+│   └── topics
+│       ├── access_rights.rst
+│       ├── actions.rst
+│       ├── backend_types.rst
+│       ├── bus.rst
+│       ├── configuration.rst
+│       ├── cron.rst
+│       ├── domain.rst
+│       ├── index-topics.rst
+│       ├── install.rst
+│       ├── logs.rst
+│       ├── models
+│       │   ├── fields_default_value.rst
+│       │   ├── fields_on_change.rst
+│       │   └── index-topics-models.rst
+│       ├── modules
+│       │   └── index-topics-modules.rst
+│       ├── pyson.rst
+│       ├── reports
+│       │   └── index-topics-reports.rst
+│       ├── rpc.rst
+│       ├── setup_database.rst
+│       ├── start_server.rst
+│       ├── task_queue.rst
+│       ├── testing.rst
+│       ├── translation.rst
+│       ├── triggers.rst
+│       ├── user_application.rst
+│       ├── user_errors_warnings.rst
+│       ├── views
+│       │   ├── extension.rst
+│       │   └── index-topics-views.rst
+│       └── wizard.rst
+├── _static
+│   ├── custom.css
+│   └── custom.js
+├── _templates
+└── web-client
+    └── index-web-client.rst
+
